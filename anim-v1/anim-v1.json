@@ -1,0 +1,1587 @@
+{
+ "version": "anim-v1",
+ "scale": {
+  "at2x": "2 px per world px for every sheet (heroes, Coupler, zombies). 1x = 1 px per world px.",
+  "zombies": "zombies were rescaled from the ~4.1 px/world grounding-v1 PNGs so the visible height matches the grounding rule ((PNG h - 16) = world height: drifter 62.5, sprinter 60, howler 63.75, bulwark 72.5). Draw the zombie sheets at cell size like the heroes (no extra scale).",
+  "heroes": "same scale, outline and foot point as grounding-v1 / hero-sprites-v2."
+ },
+ "footPoint": "pivot = foot point (between the feet on the ground), bottom-centre anchor. Position the sprite so the pivot sits on the unit world position.",
+ "directions": {
+  "order": [
+   "down",
+   "up",
+   "left",
+   "right",
+   "downleft",
+   "downright",
+   "upleft",
+   "upright"
+  ],
+  "pick": "8-way from the movement vector on screen: right 0deg, downright 45, down 90, ... (+y down), sectors of 45 deg"
+ },
+ "speedMapping": {
+  "rule": "feet lock to the ground only when fps = speed * framesPerCycle / worldPxPerCycle. worldPxPerCycle is the same in all 8 directions (stride is constant on screen), so scale the walk fps with the unit move speed (or set move speed from the fps given here).",
+  "perCharacter": {
+   "jess": {
+    "worldPxPerCycle": 29.74,
+    "defaultFps": 12,
+    "speedAtDefaultFps": 44.62
+   },
+   "kate": {
+    "worldPxPerCycle": 28.72,
+    "defaultFps": 12,
+    "speedAtDefaultFps": 43.08
+   },
+   "coupler": {
+    "worldPxPerCycle": 20.51,
+    "defaultFps": 12,
+    "speedAtDefaultFps": 30.77
+   },
+   "breaker": {
+    "worldPxPerCycle": 30.77,
+    "defaultFps": 12,
+    "speedAtDefaultFps": 46.15
+   },
+   "relay": {
+    "worldPxPerCycle": 30.77,
+    "defaultFps": 12,
+    "speedAtDefaultFps": 46.15
+   },
+   "drifter": {
+    "worldPxPerCycle": 17.9,
+    "defaultFps": 10,
+    "speedAtDefaultFps": 22.38
+   },
+   "sprinter": {
+    "worldPxPerCycle": 36.44,
+    "defaultFps": 14,
+    "speedAtDefaultFps": 63.77
+   },
+   "howler": {
+    "worldPxPerCycle": 17.2,
+    "defaultFps": 10,
+    "speedAtDefaultFps": 21.5
+   },
+   "bulwark": {
+    "worldPxPerCycle": 21.29,
+    "defaultFps": 9,
+    "speedAtDefaultFps": 23.96
+   }
+  },
+  "clamp": "keep fps within 0.75x-1.4x of default; outside that, change speed or accept slight sliding. Under ~25% of default speed, switch heroes to idle."
+ },
+ "filtering": "same as grounding-v1: bilinear, no mipmaps, premultiplied alpha on upload",
+ "barricade": {
+  "status": "reserved for the barricade damage-state set (ingame/anim-v1/barricade/barricade.json); merge it here",
+  "zombieAttackHook": "on each zombie attack hitFrame: barricade.hp -= dmg; spawn fx-barricade-hit at barricade pivot + (0,-38) 1x, x jitter toward attacker; hit wobble; state swap per stateFromHealth"
+ },
+ "sheets": {
+  "jess-walk": {
+   "file": "jess-walk@2x.png",
+   "file1x": "1x/jess-walk.png",
+   "cell": [
+    200,
+    196
+   ],
+   "cell1x": [
+    100,
+    98
+   ],
+   "pivot": [
+    100,
+    173
+   ],
+   "pivot1x": [
+    50.0,
+    86.5
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/jess-walk-shadow@2x.png",
+    "file1x": "shadows/1x/jess-walk-shadow.png",
+    "cell": [
+     272,
+     82
+    ],
+    "cell1x": [
+     136,
+     41
+    ],
+    "pivot": [
+     100,
+     40
+    ],
+    "pivot1x": [
+     50.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 12,
+   "worldPxPerCycle": 29.74,
+   "moveSpeedWorldPxPerS": 44.62,
+   "fpsForSpeed": "fps = speed_world_px_per_s * 8 / 29.74"
+  },
+  "jess-idle": {
+   "file": "jess-idle@2x.png",
+   "file1x": "1x/jess-idle.png",
+   "cell": [
+    200,
+    180
+   ],
+   "cell1x": [
+    100,
+    90
+   ],
+   "pivot": [
+    100,
+    170
+   ],
+   "pivot1x": [
+    50.0,
+    85.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/jess-idle-shadow@2x.png",
+    "file1x": "shadows/1x/jess-idle-shadow.png",
+    "cell": [
+     268,
+     80
+    ],
+    "cell1x": [
+     134,
+     40
+    ],
+    "pivot": [
+     100,
+     40
+    ],
+    "pivot1x": [
+     50.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 8
+  },
+  "jess-attack": {
+   "file": "jess-attack@2x.png",
+   "file1x": "1x/jess-attack.png",
+   "cell": [
+    200,
+    180
+   ],
+   "cell1x": [
+    100,
+    90
+   ],
+   "pivot": [
+    100,
+    170
+   ],
+   "pivot1x": [
+    50.0,
+    85.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/jess-attack-shadow@2x.png",
+    "file1x": "shadows/1x/jess-attack-shadow.png",
+    "cell": [
+     268,
+     80
+    ],
+    "cell1x": [
+     134,
+     40
+    ],
+    "pivot": [
+     100,
+     40
+    ],
+    "pivot1x": [
+     50.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 12,
+   "hitFrames": [
+    3
+   ],
+   "hitNote": "strike frame: spawn projectile/melee damage here; frames 0-2 anticipation, 4-7 recover. Breaker down row is the kneel/slam pose."
+  },
+  "kate-walk": {
+   "file": "kate-walk@2x.png",
+   "file1x": "1x/kate-walk.png",
+   "cell": [
+    192,
+    192
+   ],
+   "cell1x": [
+    96,
+    96
+   ],
+   "pivot": [
+    96,
+    170
+   ],
+   "pivot1x": [
+    48.0,
+    85.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/kate-walk-shadow@2x.png",
+    "file1x": "shadows/1x/kate-walk-shadow.png",
+    "cell": [
+     264,
+     80
+    ],
+    "cell1x": [
+     132,
+     40
+    ],
+    "pivot": [
+     96,
+     40
+    ],
+    "pivot1x": [
+     48.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 12,
+   "worldPxPerCycle": 28.72,
+   "moveSpeedWorldPxPerS": 43.08,
+   "fpsForSpeed": "fps = speed_world_px_per_s * 8 / 28.72"
+  },
+  "kate-idle": {
+   "file": "kate-idle@2x.png",
+   "file1x": "1x/kate-idle.png",
+   "cell": [
+    192,
+    180
+   ],
+   "cell1x": [
+    96,
+    90
+   ],
+   "pivot": [
+    96,
+    170
+   ],
+   "pivot1x": [
+    48.0,
+    85.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/kate-idle-shadow@2x.png",
+    "file1x": "shadows/1x/kate-idle-shadow.png",
+    "cell": [
+     260,
+     80
+    ],
+    "cell1x": [
+     130,
+     40
+    ],
+    "pivot": [
+     96,
+     40
+    ],
+    "pivot1x": [
+     48.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 8
+  },
+  "kate-attack": {
+   "file": "kate-attack@2x.png",
+   "file1x": "1x/kate-attack.png",
+   "cell": [
+    208,
+    180
+   ],
+   "cell1x": [
+    104,
+    90
+   ],
+   "pivot": [
+    104,
+    170
+   ],
+   "pivot1x": [
+    52.0,
+    85.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/kate-attack-shadow@2x.png",
+    "file1x": "shadows/1x/kate-attack-shadow.png",
+    "cell": [
+     276,
+     80
+    ],
+    "cell1x": [
+     138,
+     40
+    ],
+    "pivot": [
+     104,
+     40
+    ],
+    "pivot1x": [
+     52.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 12,
+   "hitFrames": [
+    3
+   ],
+   "hitNote": "strike frame: spawn projectile/melee damage here; frames 0-2 anticipation, 4-7 recover. Breaker down row is the kneel/slam pose."
+  },
+  "coupler-walk": {
+   "file": "coupler-walk@2x.png",
+   "file1x": "1x/coupler-walk.png",
+   "cell": [
+    216,
+    212
+   ],
+   "cell1x": [
+    108,
+    106
+   ],
+   "pivot": [
+    108,
+    194
+   ],
+   "pivot1x": [
+    54.0,
+    97.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/coupler-walk-shadow@2x.png",
+    "file1x": "shadows/1x/coupler-walk-shadow.png",
+    "cell": [
+     294,
+     84
+    ],
+    "cell1x": [
+     147,
+     42
+    ],
+    "pivot": [
+     108,
+     40
+    ],
+    "pivot1x": [
+     54.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 12,
+   "worldPxPerCycle": 20.51,
+   "moveSpeedWorldPxPerS": 30.77,
+   "fpsForSpeed": "fps = speed_world_px_per_s * 8 / 20.51"
+  },
+  "coupler-idle": {
+   "file": "coupler-idle@2x.png",
+   "file1x": "1x/coupler-idle.png",
+   "cell": [
+    208,
+    208
+   ],
+   "cell1x": [
+    104,
+    104
+   ],
+   "pivot": [
+    104,
+    191
+   ],
+   "pivot1x": [
+    52.0,
+    95.5
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/coupler-idle-shadow@2x.png",
+    "file1x": "shadows/1x/coupler-idle-shadow.png",
+    "cell": [
+     284,
+     84
+    ],
+    "cell1x": [
+     142,
+     42
+    ],
+    "pivot": [
+     104,
+     40
+    ],
+    "pivot1x": [
+     52.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 8
+  },
+  "coupler-attack": {
+   "file": "coupler-attack@2x.png",
+   "file1x": "1x/coupler-attack.png",
+   "cell": [
+    208,
+    208
+   ],
+   "cell1x": [
+    104,
+    104
+   ],
+   "pivot": [
+    104,
+    191
+   ],
+   "pivot1x": [
+    52.0,
+    95.5
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/coupler-attack-shadow@2x.png",
+    "file1x": "shadows/1x/coupler-attack-shadow.png",
+    "cell": [
+     284,
+     84
+    ],
+    "cell1x": [
+     142,
+     42
+    ],
+    "pivot": [
+     104,
+     40
+    ],
+    "pivot1x": [
+     52.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 12,
+   "hitFrames": [
+    3
+   ],
+   "hitNote": "strike frame: spawn projectile/melee damage here; frames 0-2 anticipation, 4-7 recover. Breaker down row is the kneel/slam pose."
+  },
+  "breaker-walk": {
+   "file": "breaker-walk@2x.png",
+   "file1x": "1x/breaker-walk.png",
+   "cell": [
+    176,
+    208
+   ],
+   "cell1x": [
+    88,
+    104
+   ],
+   "pivot": [
+    88,
+    185
+   ],
+   "pivot1x": [
+    44.0,
+    92.5
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/breaker-walk-shadow@2x.png",
+    "file1x": "shadows/1x/breaker-walk-shadow.png",
+    "cell": [
+     252,
+     84
+    ],
+    "cell1x": [
+     126,
+     42
+    ],
+    "pivot": [
+     88,
+     40
+    ],
+    "pivot1x": [
+     44.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 12,
+   "worldPxPerCycle": 30.77,
+   "moveSpeedWorldPxPerS": 46.15,
+   "fpsForSpeed": "fps = speed_world_px_per_s * 8 / 30.77"
+  },
+  "breaker-idle": {
+   "file": "breaker-idle@2x.png",
+   "file1x": "1x/breaker-idle.png",
+   "cell": [
+    176,
+    196
+   ],
+   "cell1x": [
+    88,
+    98
+   ],
+   "pivot": [
+    88,
+    185
+   ],
+   "pivot1x": [
+    44.0,
+    92.5
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/breaker-idle-shadow@2x.png",
+    "file1x": "shadows/1x/breaker-idle-shadow.png",
+    "cell": [
+     248,
+     82
+    ],
+    "cell1x": [
+     124,
+     41
+    ],
+    "pivot": [
+     88,
+     40
+    ],
+    "pivot1x": [
+     44.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 8
+  },
+  "breaker-attack": {
+   "file": "breaker-attack@2x.png",
+   "file1x": "1x/breaker-attack.png",
+   "cell": [
+    200,
+    196
+   ],
+   "cell1x": [
+    100,
+    98
+   ],
+   "pivot": [
+    100,
+    185
+   ],
+   "pivot1x": [
+    50.0,
+    92.5
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/breaker-attack-shadow@2x.png",
+    "file1x": "shadows/1x/breaker-attack-shadow.png",
+    "cell": [
+     272,
+     82
+    ],
+    "cell1x": [
+     136,
+     41
+    ],
+    "pivot": [
+     100,
+     40
+    ],
+    "pivot1x": [
+     50.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 12,
+   "hitFrames": [
+    3
+   ],
+   "hitNote": "strike frame: spawn projectile/melee damage here; frames 0-2 anticipation, 4-7 recover. Breaker down row is the kneel/slam pose."
+  },
+  "relay-walk": {
+   "file": "relay-walk@2x.png",
+   "file1x": "1x/relay-walk.png",
+   "cell": [
+    168,
+    204
+   ],
+   "cell1x": [
+    84,
+    102
+   ],
+   "pivot": [
+    84,
+    181
+   ],
+   "pivot1x": [
+    42.0,
+    90.5
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/relay-walk-shadow@2x.png",
+    "file1x": "shadows/1x/relay-walk-shadow.png",
+    "cell": [
+     244,
+     82
+    ],
+    "cell1x": [
+     122,
+     41
+    ],
+    "pivot": [
+     84,
+     40
+    ],
+    "pivot1x": [
+     42.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 12,
+   "worldPxPerCycle": 30.77,
+   "moveSpeedWorldPxPerS": 46.15,
+   "fpsForSpeed": "fps = speed_world_px_per_s * 8 / 30.77"
+  },
+  "relay-idle": {
+   "file": "relay-idle@2x.png",
+   "file1x": "1x/relay-idle.png",
+   "cell": [
+    168,
+    188
+   ],
+   "cell1x": [
+    84,
+    94
+   ],
+   "pivot": [
+    84,
+    178
+   ],
+   "pivot1x": [
+    42.0,
+    89.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/relay-idle-shadow@2x.png",
+    "file1x": "shadows/1x/relay-idle-shadow.png",
+    "cell": [
+     238,
+     80
+    ],
+    "cell1x": [
+     119,
+     40
+    ],
+    "pivot": [
+     84,
+     40
+    ],
+    "pivot1x": [
+     42.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 8
+  },
+  "relay-attack": {
+   "file": "relay-attack@2x.png",
+   "file1x": "1x/relay-attack.png",
+   "cell": [
+    168,
+    188
+   ],
+   "cell1x": [
+    84,
+    94
+   ],
+   "pivot": [
+    84,
+    178
+   ],
+   "pivot1x": [
+    42.0,
+    89.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/relay-attack-shadow@2x.png",
+    "file1x": "shadows/1x/relay-attack-shadow.png",
+    "cell": [
+     238,
+     80
+    ],
+    "cell1x": [
+     119,
+     40
+    ],
+    "pivot": [
+     84,
+     40
+    ],
+    "pivot1x": [
+     42.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 12,
+   "hitFrames": [
+    3
+   ],
+   "hitNote": "strike frame: spawn projectile/melee damage here; frames 0-2 anticipation, 4-7 recover. Breaker down row is the kneel/slam pose."
+  },
+  "drifter-walk": {
+   "file": "drifter-walk@2x.png",
+   "file1x": "1x/drifter-walk.png",
+   "cell": [
+    88,
+    144
+   ],
+   "cell1x": [
+    44,
+    72
+   ],
+   "pivot": [
+    44,
+    133
+   ],
+   "pivot1x": [
+    22.0,
+    66.5
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/drifter-walk-shadow@2x.png",
+    "file1x": "shadows/1x/drifter-walk-shadow.png",
+    "cell": [
+     146,
+     74
+    ],
+    "cell1x": [
+     73,
+     37
+    ],
+    "pivot": [
+     44,
+     40
+    ],
+    "pivot1x": [
+     22.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 10,
+   "worldPxPerCycle": 17.9,
+   "moveSpeedWorldPxPerS": 22.38,
+   "fpsForSpeed": "fps = speed_world_px_per_s * 8 / 17.9"
+  },
+  "drifter-attack": {
+   "file": "drifter-attack@2x.png",
+   "file1x": "1x/drifter-attack.png",
+   "cell": [
+    152,
+    148
+   ],
+   "cell1x": [
+    76,
+    74
+   ],
+   "pivot": [
+    76,
+    144
+   ],
+   "pivot1x": [
+    38.0,
+    72.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/drifter-attack-shadow@2x.png",
+    "file1x": "shadows/1x/drifter-attack-shadow.png",
+    "cell": [
+     210,
+     74
+    ],
+    "cell1x": [
+     105,
+     37
+    ],
+    "pivot": [
+     76,
+     40
+    ],
+    "pivot1x": [
+     38.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 10,
+   "hitFrames": [
+    2,
+    6
+   ],
+   "hitNote": "two claw swipes per loop (left arm then right arm); fire barricade damage + fx-barricade-hit when the frame index becomes a hit frame",
+   "reachWorldPx": {
+    "down": 0.0,
+    "up": 63.6,
+    "left": 35.6,
+    "right": 35.6,
+    "downleft": 5.5,
+    "downright": 5.5,
+    "upleft": 54.9,
+    "upright": 54.9
+   },
+   "standoffWorldPx": {
+    "left": 65.6,
+    "right": 65.6
+   },
+   "standoffNote": "distance foot point -> barricade pivot on the facing axis. Side rows: reachWorldPx + barricade half-footprint - 8 overlap (value given for l1, half-footprint 38). Vertical/diagonal rows: claw is in front of the body, use the same 2D gap as side rows minus 30% for up/down, or just stop the zombie when its foot point is 34-40 world px from the barricade pivot."
+  },
+  "sprinter-walk": {
+   "file": "sprinter-walk@2x.png",
+   "file1x": "1x/sprinter-walk.png",
+   "cell": [
+    96,
+    128
+   ],
+   "cell1x": [
+    48,
+    64
+   ],
+   "pivot": [
+    48,
+    114
+   ],
+   "pivot1x": [
+    24.0,
+    57.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/sprinter-walk-shadow@2x.png",
+    "file1x": "shadows/1x/sprinter-walk-shadow.png",
+    "cell": [
+     148,
+     72
+    ],
+    "cell1x": [
+     74,
+     36
+    ],
+    "pivot": [
+     48,
+     40
+    ],
+    "pivot1x": [
+     24.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 14,
+   "worldPxPerCycle": 36.44,
+   "moveSpeedWorldPxPerS": 63.77,
+   "fpsForSpeed": "fps = speed_world_px_per_s * 8 / 36.44"
+  },
+  "sprinter-attack": {
+   "file": "sprinter-attack@2x.png",
+   "file1x": "1x/sprinter-attack.png",
+   "cell": [
+    152,
+    152
+   ],
+   "cell1x": [
+    76,
+    76
+   ],
+   "pivot": [
+    76,
+    148
+   ],
+   "pivot1x": [
+    38.0,
+    74.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/sprinter-attack-shadow@2x.png",
+    "file1x": "shadows/1x/sprinter-attack-shadow.png",
+    "cell": [
+     212,
+     76
+    ],
+    "cell1x": [
+     106,
+     38
+    ],
+    "pivot": [
+     76,
+     40
+    ],
+    "pivot1x": [
+     38.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 10,
+   "hitFrames": [
+    2,
+    6
+   ],
+   "hitNote": "two claw swipes per loop (left arm then right arm); fire barricade damage + fx-barricade-hit when the frame index becomes a hit frame",
+   "reachWorldPx": {
+    "down": 0.0,
+    "up": 64.7,
+    "left": 35.5,
+    "right": 35.5,
+    "downleft": 7.0,
+    "downright": 7.0,
+    "upleft": 63.3,
+    "upright": 63.3
+   },
+   "standoffWorldPx": {
+    "left": 65.5,
+    "right": 65.5
+   },
+   "standoffNote": "distance foot point -> barricade pivot on the facing axis. Side rows: reachWorldPx + barricade half-footprint - 8 overlap (value given for l1, half-footprint 38). Vertical/diagonal rows: claw is in front of the body, use the same 2D gap as side rows minus 30% for up/down, or just stop the zombie when its foot point is 34-40 world px from the barricade pivot."
+  },
+  "howler-walk": {
+   "file": "howler-walk@2x.png",
+   "file1x": "1x/howler-walk.png",
+   "cell": [
+    88,
+    148
+   ],
+   "cell1x": [
+    44,
+    74
+   ],
+   "pivot": [
+    44,
+    139
+   ],
+   "pivot1x": [
+    22.0,
+    69.5
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/howler-walk-shadow@2x.png",
+    "file1x": "shadows/1x/howler-walk-shadow.png",
+    "cell": [
+     146,
+     74
+    ],
+    "cell1x": [
+     73,
+     37
+    ],
+    "pivot": [
+     44,
+     40
+    ],
+    "pivot1x": [
+     22.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 10,
+   "worldPxPerCycle": 17.2,
+   "moveSpeedWorldPxPerS": 21.5,
+   "fpsForSpeed": "fps = speed_world_px_per_s * 8 / 17.2"
+  },
+  "howler-attack": {
+   "file": "howler-attack@2x.png",
+   "file1x": "1x/howler-attack.png",
+   "cell": [
+    144,
+    152
+   ],
+   "cell1x": [
+    72,
+    76
+   ],
+   "pivot": [
+    72,
+    148
+   ],
+   "pivot1x": [
+    36.0,
+    74.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/howler-attack-shadow@2x.png",
+    "file1x": "shadows/1x/howler-attack-shadow.png",
+    "cell": [
+     204,
+     76
+    ],
+    "cell1x": [
+     102,
+     38
+    ],
+    "pivot": [
+     72,
+     40
+    ],
+    "pivot1x": [
+     36.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 10,
+   "hitFrames": [
+    2,
+    6
+   ],
+   "hitNote": "two claw swipes per loop (left arm then right arm); fire barricade damage + fx-barricade-hit when the frame index becomes a hit frame",
+   "reachWorldPx": {
+    "down": 0.0,
+    "up": 64.9,
+    "left": 34.0,
+    "right": 34.0,
+    "downleft": 6.8,
+    "downright": 6.8,
+    "upleft": 54.0,
+    "upright": 54.0
+   },
+   "standoffWorldPx": {
+    "left": 64.0,
+    "right": 64.0
+   },
+   "standoffNote": "distance foot point -> barricade pivot on the facing axis. Side rows: reachWorldPx + barricade half-footprint - 8 overlap (value given for l1, half-footprint 38). Vertical/diagonal rows: claw is in front of the body, use the same 2D gap as side rows minus 30% for up/down, or just stop the zombie when its foot point is 34-40 world px from the barricade pivot."
+  },
+  "bulwark-walk": {
+   "file": "bulwark-walk@2x.png",
+   "file1x": "1x/bulwark-walk.png",
+   "cell": [
+    144,
+    152
+   ],
+   "cell1x": [
+    72,
+    76
+   ],
+   "pivot": [
+    72,
+    143
+   ],
+   "pivot1x": [
+    36.0,
+    71.5
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/bulwark-walk-shadow@2x.png",
+    "file1x": "shadows/1x/bulwark-walk-shadow.png",
+    "cell": [
+     204,
+     76
+    ],
+    "cell1x": [
+     102,
+     38
+    ],
+    "pivot": [
+     72,
+     40
+    ],
+    "pivot1x": [
+     36.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 9,
+   "worldPxPerCycle": 21.29,
+   "moveSpeedWorldPxPerS": 23.96,
+   "fpsForSpeed": "fps = speed_world_px_per_s * 8 / 21.29"
+  },
+  "bulwark-attack": {
+   "file": "bulwark-attack@2x.png",
+   "file1x": "1x/bulwark-attack.png",
+   "cell": [
+    208,
+    180
+   ],
+   "cell1x": [
+    104,
+    90
+   ],
+   "pivot": [
+    104,
+    176
+   ],
+   "pivot1x": [
+    52.0,
+    88.0
+   ],
+   "frames": 8,
+   "rows": [
+    "down",
+    "up",
+    "left",
+    "right",
+    "downleft",
+    "downright",
+    "upleft",
+    "upright"
+   ],
+   "layout": "row = direction (rows order), column = frame",
+   "mirroredRows": {
+    "right": "left",
+    "downright": "downleft",
+    "upright": "upleft"
+   },
+   "loop": true,
+   "shadow": {
+    "file": "shadows/bulwark-attack-shadow@2x.png",
+    "file1x": "shadows/1x/bulwark-attack-shadow.png",
+    "cell": [
+     276,
+     80
+    ],
+    "cell1x": [
+     138,
+     40
+    ],
+    "pivot": [
+     104,
+     40
+    ],
+    "pivot1x": [
+     52.0,
+     20.0
+    ],
+    "note": "same row/col layout; put shadow pivot on the sprite foot point; draw under all sprites"
+   },
+   "fps": 10,
+   "hitFrames": [
+    2,
+    6
+   ],
+   "hitNote": "two claw swipes per loop (left arm then right arm); fire barricade damage + fx-barricade-hit when the frame index becomes a hit frame",
+   "reachWorldPx": {
+    "down": 0.0,
+    "up": 73.2,
+    "left": 40.5,
+    "right": 40.5,
+    "downleft": 19.6,
+    "downright": 19.6,
+    "upleft": 60.8,
+    "upright": 60.8
+   },
+   "standoffWorldPx": {
+    "left": 70.5,
+    "right": 70.5
+   },
+   "standoffNote": "distance foot point -> barricade pivot on the facing axis. Side rows: reachWorldPx + barricade half-footprint - 8 overlap (value given for l1, half-footprint 38). Vertical/diagonal rows: claw is in front of the body, use the same 2D gap as side rows minus 30% for up/down, or just stop the zombie when its foot point is 34-40 world px from the barricade pivot."
+  }
+ }
+}
