@@ -1,0 +1,33 @@
+{
+ "version": "win-stars-v1",
+ "cell2x": [
+  320,
+  320
+ ],
+ "pivot2x": [
+  160.0,
+  160.0
+ ],
+ "cell1x": [
+  160,
+  160
+ ],
+ "pivot1x": [
+  80.0,
+  80.0
+ ],
+ "starSize2x": 176,
+ "files": {
+  "empty": "star-empty@2x.png",
+  "filled": "star-filled@2x.png",
+  "stampIn": {
+   "file": "star-stamp-in@2x.png",
+   "frames": 7,
+   "fps": 30,
+   "loop": false,
+   "impactFrame": 3,
+   "note": "Socket is baked into every frame. Hold the last frame. Stagger stars 0.35 s apart; play the stamp thud and a small screen shake on the impact frame."
+  }
+ },
+ "layout": "KR-style: middle star 1.15x and 18 px (1x) higher than the side stars, stars 150 px (1x) apart at 1x scale."
+}

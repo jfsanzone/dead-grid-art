@@ -1,0 +1,98 @@
+{
+ "version": "fx-v1",
+ "scale": "2x sheets, frames left to right; 1x/ = world px",
+ "fx": {
+  "fx-hit-bullet": {
+   "file": "fx-hit-bullet@2x.png",
+   "frames": 5,
+   "cell2x": [
+    64,
+    64
+   ],
+   "pivot2x": [
+    32,
+    32
+   ],
+   "cell1x": [
+    32,
+    32
+   ],
+   "pivot1x": [
+    16.0,
+    16.0
+   ],
+   "fps": 24,
+   "loop": false,
+   "note": "Sentry round impact. Play once at the hit point; frame 0 on contact. Bright core reads on grass and road."
+  },
+  "fx-hit-mortar": {
+   "file": "fx-hit-mortar@2x.png",
+   "frames": 6,
+   "cell2x": [
+    224,
+    208
+   ],
+   "pivot2x": [
+    112,
+    160
+   ],
+   "cell1x": [
+    112,
+    104
+   ],
+   "pivot1x": [
+    56.0,
+    80.0
+   ],
+   "fps": 20,
+   "loop": false,
+   "note": "Mortar shell blast. Pivot is the ground point of impact. Frames 3-5 carry a scorch mark; shake the camera on frame 1."
+  },
+  "fx-hit-laser": {
+   "file": "fx-hit-laser@2x.png",
+   "frames": 5,
+   "cell2x": [
+    96,
+    96
+   ],
+   "pivot2x": [
+    48,
+    48
+   ],
+   "cell1x": [
+    48,
+    48
+   ],
+   "pivot1x": [
+    24.0,
+    24.0
+   ],
+   "fps": 24,
+   "loop": false,
+   "note": "Laser/zap impact. The ring is squashed to the ground plane (0.75). Additive blending optional; art is already opaque."
+  },
+  "fx-hit-zombie": {
+   "file": "fx-hit-zombie@2x.png",
+   "frames": 5,
+   "cell2x": [
+    96,
+    80
+   ],
+   "pivot2x": [
+    48,
+    44
+   ],
+   "cell1x": [
+    48,
+    40
+   ],
+   "pivot1x": [
+    24.0,
+    22.0
+   ],
+   "fps": 20,
+   "loop": false,
+   "note": "Small hit puff on a zombie body (grey-green flecks + dust, no blood). Spawn at the hit point, about 60% up the zombie."
+  }
+ }
+}

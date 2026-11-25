@@ -1,0 +1,407 @@
+{
+ "version": "towers-v2",
+ "scale": "2x sheets; 1x/ = world px",
+ "anchor": "pivot = base centre on the ground (bottom-centre of the footprint), measured from each cell top-left",
+ "facing": "barrels point up-screen (north), same as the v7 heads, so the existing yaw rotation keeps working",
+ "towers": {
+  "sentry": {
+   "l1": {
+    "still": "sentry-l1@2x.png",
+    "idle": {
+     "file": "sentry-l1-idle@2x.png",
+     "frames": 4,
+     "fps": 6,
+     "loop": true
+    },
+    "fire": {
+     "file": "sentry-l1-fire@2x.png",
+     "frames": 4,
+     "fps": 14,
+     "loop": false,
+     "shotFrame": 0
+    },
+    "cell2x": [
+     128,
+     208
+    ],
+    "pivot2x": [
+     64,
+     202
+    ],
+    "cell1x": [
+     64,
+     104
+    ],
+    "pivot1x": [
+     32.0,
+     101.0
+    ],
+    "drawWorld": {
+     "w": 64,
+     "h": 104
+    },
+    "footprintWorldW": 48,
+    "muzzle2x": [
+     [
+      46,
+      86
+     ],
+     [
+      56,
+      86
+     ]
+    ],
+    "opaqueBBox2x": [
+     11,
+     81,
+     116,
+     204
+    ]
+   },
+   "l2": {
+    "still": "sentry-l2@2x.png",
+    "idle": {
+     "file": "sentry-l2-idle@2x.png",
+     "frames": 4,
+     "fps": 6,
+     "loop": true
+    },
+    "fire": {
+     "file": "sentry-l2-fire@2x.png",
+     "frames": 4,
+     "fps": 14,
+     "loop": false,
+     "shotFrame": 0
+    },
+    "cell2x": [
+     128,
+     208
+    ],
+    "pivot2x": [
+     64,
+     202
+    ],
+    "cell1x": [
+     64,
+     104
+    ],
+    "pivot1x": [
+     32.0,
+     101.0
+    ],
+    "drawWorld": {
+     "w": 64,
+     "h": 104
+    },
+    "footprintWorldW": 52,
+    "muzzle2x": [
+     [
+      47,
+      73
+     ],
+     [
+      69,
+      73
+     ]
+    ],
+    "opaqueBBox2x": [
+     8,
+     68,
+     119,
+     204
+    ]
+   },
+   "l3": {
+    "still": "sentry-l3@2x.png",
+    "idle": {
+     "file": "sentry-l3-idle@2x.png",
+     "frames": 4,
+     "fps": 6,
+     "loop": true
+    },
+    "fire": {
+     "file": "sentry-l3-fire@2x.png",
+     "frames": 4,
+     "fps": 14,
+     "loop": false,
+     "shotFrame": 0
+    },
+    "cell2x": [
+     128,
+     208
+    ],
+    "pivot2x": [
+     64,
+     202
+    ],
+    "cell1x": [
+     64,
+     104
+    ],
+    "pivot1x": [
+     32.0,
+     101.0
+    ],
+    "drawWorld": {
+     "w": 64,
+     "h": 104
+    },
+    "footprintWorldW": 56,
+    "muzzle2x": [
+     [
+      60,
+      50
+     ]
+    ],
+    "opaqueBBox2x": [
+     6,
+     45,
+     121,
+     203
+    ]
+   }
+  },
+  "mortar": {
+   "l1": {
+    "still": "mortar-l1@2x.png",
+    "idle": {
+     "file": "mortar-l1-idle@2x.png",
+     "frames": 4,
+     "fps": 6,
+     "loop": true
+    },
+    "fire": {
+     "file": "mortar-l1-fire@2x.png",
+     "frames": 4,
+     "fps": 12,
+     "loop": false,
+     "shotFrame": 0
+    },
+    "cell2x": [
+     160,
+     208
+    ],
+    "pivot2x": [
+     80,
+     202
+    ],
+    "cell1x": [
+     80,
+     104
+    ],
+    "pivot1x": [
+     40.0,
+     101.0
+    ],
+    "drawWorld": {
+     "w": 80,
+     "h": 104
+    },
+    "footprintWorldW": 48,
+    "muzzle2x": [
+     [
+      87,
+      106
+     ]
+    ],
+    "opaqueBBox2x": [
+     23,
+     95,
+     132,
+     204
+    ]
+   },
+   "l2": {
+    "still": "mortar-l2@2x.png",
+    "idle": {
+     "file": "mortar-l2-idle@2x.png",
+     "frames": 4,
+     "fps": 6,
+     "loop": true
+    },
+    "fire": {
+     "file": "mortar-l2-fire@2x.png",
+     "frames": 4,
+     "fps": 12,
+     "loop": false,
+     "shotFrame": 0
+    },
+    "cell2x": [
+     160,
+     208
+    ],
+    "pivot2x": [
+     80,
+     202
+    ],
+    "cell1x": [
+     80,
+     104
+    ],
+    "pivot1x": [
+     40.0,
+     101.0
+    ],
+    "drawWorld": {
+     "w": 80,
+     "h": 104
+    },
+    "footprintWorldW": 52,
+    "muzzle2x": [
+     [
+      86,
+      95
+     ]
+    ],
+    "opaqueBBox2x": [
+     22,
+     82,
+     137,
+     205
+    ]
+   },
+   "l3": {
+    "still": "mortar-l3@2x.png",
+    "idle": {
+     "file": "mortar-l3-idle@2x.png",
+     "frames": 4,
+     "fps": 6,
+     "loop": true
+    },
+    "fire": {
+     "file": "mortar-l3-fire@2x.png",
+     "frames": 4,
+     "fps": 12,
+     "loop": false,
+     "shotFrame": 0
+    },
+    "cell2x": [
+     160,
+     208
+    ],
+    "pivot2x": [
+     80,
+     202
+    ],
+    "cell1x": [
+     80,
+     104
+    ],
+    "pivot1x": [
+     40.0,
+     101.0
+    ],
+    "drawWorld": {
+     "w": 80,
+     "h": 104
+    },
+    "footprintWorldW": 56,
+    "muzzle2x": [
+     [
+      59,
+      92
+     ],
+     [
+      76,
+      97
+     ]
+    ],
+    "opaqueBBox2x": [
+     21,
+     57,
+     138,
+     204
+    ]
+   }
+  },
+  "barricade": {
+   "l1": {
+    "states": {
+     "intact": "barricade-l1@2x.png",
+     "damaged": "barricade-l1-damaged@2x.png",
+     "broken": "barricade-l1-broken@2x.png"
+    },
+    "stateRule": "intact > 66% HP, damaged 33-66%, broken < 33% (same thresholds as now)",
+    "cell2x": [
+     208,
+     200
+    ],
+    "pivot2x": [
+     104,
+     176
+    ],
+    "cell1x": [
+     104,
+     100
+    ],
+    "pivot1x": [
+     52.0,
+     88.0
+    ],
+    "drawWorld": {
+     "w": 104,
+     "h": 100
+    },
+    "footprintWorldW": 76
+   },
+   "l2": {
+    "states": {
+     "intact": "barricade-l2@2x.png",
+     "damaged": "barricade-l2-damaged@2x.png",
+     "broken": "barricade-l2-broken@2x.png"
+    },
+    "stateRule": "intact > 66% HP, damaged 33-66%, broken < 33% (same thresholds as now)",
+    "cell2x": [
+     208,
+     200
+    ],
+    "pivot2x": [
+     104,
+     176
+    ],
+    "cell1x": [
+     104,
+     100
+    ],
+    "pivot1x": [
+     52.0,
+     88.0
+    ],
+    "drawWorld": {
+     "w": 104,
+     "h": 100
+    },
+    "footprintWorldW": 78
+   },
+   "l3": {
+    "states": {
+     "intact": "barricade-l3@2x.png",
+     "damaged": "barricade-l3-damaged@2x.png",
+     "broken": "barricade-l3-broken@2x.png"
+    },
+    "stateRule": "intact > 66% HP, damaged 33-66%, broken < 33% (same thresholds as now)",
+    "cell2x": [
+     208,
+     200
+    ],
+    "pivot2x": [
+     104,
+     176
+    ],
+    "cell1x": [
+     104,
+     100
+    ],
+    "pivot1x": [
+     52.0,
+     88.0
+    ],
+    "drawWorld": {
+     "w": 104,
+     "h": 100
+    },
+    "footprintWorldW": 80
+   }
+  }
+ }
+}
