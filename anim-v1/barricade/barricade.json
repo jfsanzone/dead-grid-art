@@ -1,0 +1,314 @@
+{
+ "version": "anim-v1 barricade",
+ "dropIn": "same cell, pivot (foot point, bottom-centre anchor) and scale as towers-v2 / grounding-v1 barricade-l<t>@2x.png",
+ "cell2x": [
+  208,
+  200
+ ],
+ "pivot2x": [
+  104,
+  176
+ ],
+ "cell1x": [
+  104,
+  100
+ ],
+ "pivot1x": [
+  52,
+  88
+ ],
+ "drawWorld": {
+  "w": 104,
+  "h": 100
+ },
+ "shadow": {
+  "cell2x": [
+   284,
+   128
+  ],
+  "pivot2x": [
+   104,
+   60
+  ],
+  "note": "draw under the sprite at the same pivot (shadow pivot = barricade pivot); same treatment as grounding-v1"
+ },
+ "stateFromHealth": [
+  {
+   "state": 0,
+   "hpPctAbove": 75
+  },
+  {
+   "state": 1,
+   "hpPctAbove": 40
+  },
+  {
+   "state": 2,
+   "hpPctAbove": 0
+  },
+  {
+   "state": 3,
+   "hpPct": 0
+  }
+ ],
+ "stateRuleText": "hp% > 75 -> 0; > 40 -> 1; > 0 -> 2; == 0 -> 3 (broken rubble, passable)",
+ "transitions": {
+  "0->1": "instant swap + fx-barricade-hit + wobble",
+  "1->2": "instant swap + fx-barricade-hit + wobble (strong)",
+  "2->3": "play fx-barricade-collapse above the sprite; swap sprite to state 3 on fx frame 2; screen shake 2 px 1x"
+ },
+ "hitWobble": {
+  "axis": "x",
+  "ampPx1x": 2,
+  "ampPx2x": 4,
+  "ampPx1xState2": 3,
+  "squashYPx1x": 1,
+  "durationS": 0.16,
+  "oscillations": 2.5,
+  "curve": "x = A * sin(2*pi*2.5*t/0.16) * (1 - t/0.16)^2; y = +squash for the first 0.05 s then 0",
+  "pivot": "apply as a sprite offset (do not move the shadow); skip in state 3; do not restart if <0.06 s since last start, just top up amplitude"
+ },
+ "levels": {
+  "l1": {
+   "footprintWorldW": 76,
+   "states": {
+    "0": {
+     "name": "intact",
+     "file": "barricade-l1-s0@2x.png",
+     "file1x": "1x/barricade-l1-s0.png",
+     "shadow": "shadows/barricade-l1-s0-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l1-s0-shadow.png",
+     "opaqueBBox2x": [
+      25,
+      55,
+      183,
+      179
+     ],
+     "visibleHeight2x": 121
+    },
+    "1": {
+     "name": "damaged",
+     "file": "barricade-l1-s1@2x.png",
+     "file1x": "1x/barricade-l1-s1.png",
+     "shadow": "shadows/barricade-l1-s1-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l1-s1-shadow.png",
+     "opaqueBBox2x": [
+      24,
+      51,
+      186,
+      191
+     ],
+     "visibleHeight2x": 125
+    },
+    "2": {
+     "name": "heavy",
+     "file": "barricade-l1-s2@2x.png",
+     "file1x": "1x/barricade-l1-s2.png",
+     "shadow": "shadows/barricade-l1-s2-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l1-s2-shadow.png",
+     "opaqueBBox2x": [
+      23,
+      67,
+      183,
+      181
+     ],
+     "visibleHeight2x": 109
+    },
+    "3": {
+     "name": "broken",
+     "file": "barricade-l1-s3@2x.png",
+     "file1x": "1x/barricade-l1-s3.png",
+     "shadow": "shadows/barricade-l1-s3-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l1-s3-shadow.png",
+     "opaqueBBox2x": [
+      23,
+      113,
+      184,
+      178
+     ],
+     "visibleHeight2x": 63
+    }
+   }
+  },
+  "l2": {
+   "footprintWorldW": 78,
+   "states": {
+    "0": {
+     "name": "intact",
+     "file": "barricade-l2-s0@2x.png",
+     "file1x": "1x/barricade-l2-s0.png",
+     "shadow": "shadows/barricade-l2-s0-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l2-s0-shadow.png",
+     "opaqueBBox2x": [
+      23,
+      50,
+      187,
+      180
+     ],
+     "visibleHeight2x": 126
+    },
+    "1": {
+     "name": "damaged",
+     "file": "barricade-l2-s1@2x.png",
+     "file1x": "1x/barricade-l2-s1.png",
+     "shadow": "shadows/barricade-l2-s1-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l2-s1-shadow.png",
+     "opaqueBBox2x": [
+      18,
+      48,
+      191,
+      190
+     ],
+     "visibleHeight2x": 128
+    },
+    "2": {
+     "name": "heavy",
+     "file": "barricade-l2-s2@2x.png",
+     "file1x": "1x/barricade-l2-s2.png",
+     "shadow": "shadows/barricade-l2-s2-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l2-s2-shadow.png",
+     "opaqueBBox2x": [
+      21,
+      67,
+      188,
+      182
+     ],
+     "visibleHeight2x": 109
+    },
+    "3": {
+     "name": "broken",
+     "file": "barricade-l2-s3@2x.png",
+     "file1x": "1x/barricade-l2-s3.png",
+     "shadow": "shadows/barricade-l2-s3-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l2-s3-shadow.png",
+     "opaqueBBox2x": [
+      21,
+      115,
+      187,
+      177
+     ],
+     "visibleHeight2x": 61
+    }
+   }
+  },
+  "l3": {
+   "footprintWorldW": 80,
+   "states": {
+    "0": {
+     "name": "intact",
+     "file": "barricade-l3-s0@2x.png",
+     "file1x": "1x/barricade-l3-s0.png",
+     "shadow": "shadows/barricade-l3-s0-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l3-s0-shadow.png",
+     "opaqueBBox2x": [
+      20,
+      9,
+      189,
+      178
+     ],
+     "visibleHeight2x": 167
+    },
+    "1": {
+     "name": "damaged",
+     "file": "barricade-l3-s1@2x.png",
+     "file1x": "1x/barricade-l3-s1.png",
+     "shadow": "shadows/barricade-l3-s1-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l3-s1-shadow.png",
+     "opaqueBBox2x": [
+      20,
+      9,
+      193,
+      187
+     ],
+     "visibleHeight2x": 167
+    },
+    "2": {
+     "name": "heavy",
+     "file": "barricade-l3-s2@2x.png",
+     "file1x": "1x/barricade-l3-s2.png",
+     "shadow": "shadows/barricade-l3-s2-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l3-s2-shadow.png",
+     "opaqueBBox2x": [
+      22,
+      29,
+      186,
+      176
+     ],
+     "visibleHeight2x": 147
+    },
+    "3": {
+     "name": "broken",
+     "file": "barricade-l3-s3@2x.png",
+     "file1x": "1x/barricade-l3-s3.png",
+     "shadow": "shadows/barricade-l3-s3-shadow@2x.png",
+     "shadow1x": "shadows/1x/barricade-l3-s3-shadow.png",
+     "opaqueBBox2x": [
+      19,
+      106,
+      188,
+      178
+     ],
+     "visibleHeight2x": 70
+    }
+   }
+  }
+ },
+ "fx": {
+  "fx-barricade-hit": {
+   "file": "fx-barricade-hit@2x.png",
+   "file1x": "1x/fx-barricade-hit.png",
+   "frames": 6,
+   "fps": 12,
+   "durationS": 0.5,
+   "loop": false,
+   "blend": "normal",
+   "cell2x": [
+    96,
+    96
+   ],
+   "pivot2x": [
+    48,
+    48
+   ],
+   "cell1x": [
+    48,
+    48
+   ],
+   "pivot1x": [
+    24.0,
+    24.0
+   ],
+   "edgeClipPx": 6,
+   "note": "Play once at the impact point on the barricade face (see placement). Frame 0 on contact. Light wood-chip flash, no fire. Re-trigger restarts; max 1 per barricade at a time is plenty.",
+   "placement": "spawn at the hit point; default = barricade pivot + (0, -38) 1x px ( -76 at 2x ), jitter x +-14 1x px toward the attacker side"
+  },
+  "fx-barricade-collapse": {
+   "file": "fx-barricade-collapse@2x.png",
+   "file1x": "1x/fx-barricade-collapse.png",
+   "frames": 8,
+   "fps": 14,
+   "durationS": 0.571,
+   "loop": false,
+   "blend": "normal",
+   "cell2x": [
+    256,
+    232
+   ],
+   "pivot2x": [
+    128,
+    190
+   ],
+   "cell1x": [
+    128,
+    116
+   ],
+   "pivot1x": [
+    64.0,
+    95.0
+   ],
+   "edgeClipPx": 10,
+   "note": "One-shot on the state 2 -> 3 transition. Draw ABOVE the barricade sprite, pivot on the barricade pivot (foot point). Swap the sprite from state 2 to state 3 on frame 2 (the dust cloud fully covers the wall on frames 2-3).",
+   "swapSpriteOnFrame": 2,
+   "screenShakePx1x": 2
+  }
+ }
+}
