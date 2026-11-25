@@ -1,0 +1,145 @@
+{
+"barn": {
+"file": "barn.png",
+"x": 0.0344,
+"y": 0.0556,
+"w": 0.1469,
+"h": 0.3194,
+"baseY": 0.3583,
+"pxW": 376,
+"pxH": 460,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/barn.png"
+},
+"pickup": {
+"file": "pickup.png",
+"x": 0.0539,
+"y": 0.3514,
+"w": 0.1187,
+"h": 0.15,
+"baseY": 0.4861,
+"pxW": 304,
+"pxH": 216,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/pickup.png"
+},
+"farmhouse": {
+"file": "farmhouse.png",
+"x": 0.8102,
+"y": 0.1347,
+"w": 0.1648,
+"h": 0.3694,
+"baseY": 0.4792,
+"pxW": 422,
+"pxH": 532,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/farmhouse.png"
+},
+"signal": {
+"file": "signal.png",
+"x": 0.7953,
+"y": 0.0806,
+"w": 0.0391,
+"h": 0.1111,
+"baseY": 0.1833,
+"pxW": 100,
+"pxH": 160,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/signal.png"
+},
+"tree-tl": {
+"file": "tree-tl.png",
+"x": 0.0,
+"y": 0.0,
+"w": 0.0625,
+"h": 0.1444,
+"baseY": 0.1361,
+"pxW": 160,
+"pxH": 208,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/tree-tl.png"
+},
+"tree-tr": {
+"file": "tree-tr.png",
+"x": 0.8969,
+"y": 0.0556,
+"w": 0.1031,
+"h": 0.1278,
+"baseY": 0.175,
+"pxW": 264,
+"pxH": 184,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/tree-tr.png"
+},
+"tree-br": {
+"file": "tree-br.png",
+"x": 0.8906,
+"y": 0.7722,
+"w": 0.1094,
+"h": 0.2278,
+"baseY": 0.9889,
+"pxW": 280,
+"pxH": 328,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/tree-br.png"
+},
+"tree-bl": {
+"file": "tree-bl.png",
+"x": 0.0,
+"y": 0.7722,
+"w": 0.0766,
+"h": 0.2278,
+"baseY": 0.9889,
+"pxW": 196,
+"pxH": 328,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/tree-bl.png"
+},
+"tree-ml": {
+"file": "tree-ml.png",
+"x": 0.0141,
+"y": 0.4139,
+"w": 0.0469,
+"h": 0.0972,
+"baseY": 0.5028,
+"pxW": 120,
+"pxH": 140,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/tree-ml.png"
+},
+"tree-tm": {
+"file": "tree-tm.png",
+"x": 0.5953,
+"y": 0.0778,
+"w": 0.0563,
+"h": 0.0944,
+"baseY": 0.1639,
+"pxW": 144,
+"pxH": 136,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/tree-tm.png"
+},
+"drum-a": {
+"file": "drum-a.png",
+"x": 0.3875,
+"y": 0.7444,
+"w": 0.0375,
+"h": 0.1028,
+"baseY": 0.8333,
+"pxW": 96,
+"pxH": 148,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/drum-a.png"
+},
+"drum-b": {
+"file": "drum-b.png",
+"x": 0.8039,
+"y": 0.7069,
+"w": 0.0453,
+"h": 0.1083,
+"baseY": 0.8,
+"pxW": 116,
+"pxH": 156,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/drum-b.png"
+},
+"tractor": {
+"file": "tractor.png",
+"x": 0.0461,
+"y": 0.6681,
+"w": 0.0969,
+"h": 0.1361,
+"baseY": 0.7889,
+"pxW": 248,
+"pxH": 196,
+"url": "https://raw.githubusercontent.com/jfsanzone/dead-grid-art/main/v9/props/tractor.png"
+}
+}
