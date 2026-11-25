@@ -21,7 +21,7 @@ Real walk cycles, idles and attacks for the 5 heroes and 4 zombies. They drop in
 ## Layout
 - Rows are always `down, up, left, right, downleft, downright, upleft, upright`, and columns are frames 0..7. Every animation loops.
 - Pick the row 8-way from the on-screen movement (or facing) vector in 45° sectors.
-- Right-facing rows are mirrors of the left ones, so held items swap hands (Relay's radio, Breaker's tablet).
+- Right-facing rows are mirrors of the left ones, except for the held-item rows. Relay's radio stays in his right hand and Breaker's tablet stays in his left hand, because those rows use repainted art (see Fix pass). Kate's controller is the one item that still swaps hands on her mirrored rows.
 - **Cells differ per sheet.** Some walk cells grew so raised feet don't clip. Always read `cell` and `pivot` from the JSON for each sheet; don't reuse the grounding-v1 values.
 - The pivot is the foot point, anchored bottom-centre. It is the same contact point as grounding-v1, so swapping sheets never pops the character.
 - Scale: @2x is 2 px per world px for everything, and 1x is 1:1. The zombies were rescaled from the ~4 px/world grounding PNGs to the grounding height rule, so draw them at cell size like the heroes.
@@ -63,11 +63,21 @@ Each walk cycle (8 frames) covers a fixed ground distance, `worldPxPerCycle`. It
 - Every frame was checked against its cell for clipping: none.
 - The previews were reviewed at the JSON fps.
 
+## Fix pass (2026-11-25)
+The fix pass changed the files in place. Every filename, cell, pivot, frame count and shadow cell is unchanged.
+- **Zombies:** all 4 types now share one grey-green skin, with no gore. Bulwark's downleft/downright rows are a repaint of the sheet design, so they no longer show the armoured brute. Howler's greener downleft is fixed. The drifter's jeans no longer tear (leg hole fill plus a new hip annotation).
+- **Zombie walk arms** now swing and dangle on their own, with a small lag and a double-time bounce, instead of riding the torso.
+- **Held items in the correct hand on every row:**
+  - Relay: walk and idle downright use a repainted, item-swapped source, so the radio stays in his right hand. Attack downleft is a repaint (pointing with his left hand, radio at his mouth in his right). The mirrored downright attack was already correct.
+  - Breaker: walk and idle downleft use a repainted source with the tablet in his left hand. Downright is the original painted view, mirrored.
+- **Kate:** she now carries the drone controller in every view where her hands are visible. In the left/right views it is at her hip, and in downleft/downright it is in her near hand and swings with the arm. Down is unchanged (two-handed). In up/upleft/upright it is hidden by her cape. Her attack still holds the drone.
+- **JSON:** the only change is `bulwark-attack.reachWorldPx` for downleft/downright (19.6 → 9.3), because the repainted pose reaches less. Standoff uses the side rows, so it is unchanged.
+- **Foot drift after the pass (@2x px):** drifter ≤0.53, sprinter ≤1.64, howler ≤0.48, bulwark ≤1.37, heroes ≤1.39. Down/up are 0 for everyone.
+
 ## Known limits
 - Hero idle and attack are a spine/torso warp of the grounding-v1 attack pose (wind-up, strike, recoil), not a full limb re-animation. Breaker's down-row attack is the kneel/slam pose.
-- Zombie walk arms ride the torso. The arms are rigged only for the claw.
-- Source-art inconsistencies are inherited from grounding-v1:
-  - bulwark downleft/downright is the armored-brute design
-  - howler downleft has greener skin
-  - the sprinter's source poses are mid-run
-- Minor mesh tearing on the drifter's torn jeans in some frames.
+- Zombie attack arms are the claw rig. Walk arms are a light swing, not a full arm cycle.
+- The sprinter's source poses are mid-run (inherited).
+- Drifter down row: the stance leg shortens slightly at the end of stance (frame 4).
+- Howler upleft walk: a small forearm sliver shows in one frame.
+- Kate's controller swaps hands on her mirrored rows (right, downright).
