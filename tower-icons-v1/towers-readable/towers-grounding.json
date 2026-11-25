@@ -1,0 +1,187 @@
+{
+ "version": "grounding-v1 towers",
+ "note": "same files, cells and pivots as towers-v2",
+ "towers": {},
+ "shadows": {
+  "sentry-l1@2x.png": {
+   "file": "shadows/towers/sentry-l1-shadow@2x.png",
+   "size2x": [
+    206,
+    111
+   ],
+   "pivot2x": [
+    64,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "sentry-l2@2x.png": {
+   "file": "shadows/towers/sentry-l2-shadow@2x.png",
+   "size2x": [
+    206,
+    111
+   ],
+   "pivot2x": [
+    64,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "sentry-l3@2x.png": {
+   "file": "shadows/towers/sentry-l3-shadow@2x.png",
+   "size2x": [
+    206,
+    111
+   ],
+   "pivot2x": [
+    64,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "mortar-l1@2x.png": {
+   "file": "shadows/towers/mortar-l1-shadow@2x.png",
+   "size2x": [
+    238,
+    111
+   ],
+   "pivot2x": [
+    80,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "mortar-l2@2x.png": {
+   "file": "shadows/towers/mortar-l2-shadow@2x.png",
+   "size2x": [
+    238,
+    111
+   ],
+   "pivot2x": [
+    80,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "mortar-l3@2x.png": {
+   "file": "shadows/towers/mortar-l3-shadow@2x.png",
+   "size2x": [
+    238,
+    111
+   ],
+   "pivot2x": [
+    80,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "barricade-l1-broken@2x.png": {
+   "file": "shadows/towers/barricade-l1-broken-shadow@2x.png",
+   "size2x": [
+    284,
+    128
+   ],
+   "pivot2x": [
+    104,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "barricade-l1-damaged@2x.png": {
+   "file": "shadows/towers/barricade-l1-damaged-shadow@2x.png",
+   "size2x": [
+    284,
+    128
+   ],
+   "pivot2x": [
+    104,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "barricade-l1@2x.png": {
+   "file": "shadows/towers/barricade-l1-shadow@2x.png",
+   "size2x": [
+    284,
+    128
+   ],
+   "pivot2x": [
+    104,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "barricade-l2-broken@2x.png": {
+   "file": "shadows/towers/barricade-l2-broken-shadow@2x.png",
+   "size2x": [
+    284,
+    128
+   ],
+   "pivot2x": [
+    104,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "barricade-l2-damaged@2x.png": {
+   "file": "shadows/towers/barricade-l2-damaged-shadow@2x.png",
+   "size2x": [
+    284,
+    128
+   ],
+   "pivot2x": [
+    104,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "barricade-l2@2x.png": {
+   "file": "shadows/towers/barricade-l2-shadow@2x.png",
+   "size2x": [
+    284,
+    128
+   ],
+   "pivot2x": [
+    104,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "barricade-l3-broken@2x.png": {
+   "file": "shadows/towers/barricade-l3-broken-shadow@2x.png",
+   "size2x": [
+    284,
+    128
+   ],
+   "pivot2x": [
+    104,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "barricade-l3-damaged@2x.png": {
+   "file": "shadows/towers/barricade-l3-damaged-shadow@2x.png",
+   "size2x": [
+    284,
+    128
+   ],
+   "pivot2x": [
+    104,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  },
+  "barricade-l3@2x.png": {
+   "file": "shadows/towers/barricade-l3-shadow@2x.png",
+   "size2x": [
+    284,
+    128
+   ],
+   "pivot2x": [
+    104,
+    60
+   ],
+   "note": "pivot = tower pivot; use the still/state shadow under idle and fire frames too"
+  }
+ }
+}

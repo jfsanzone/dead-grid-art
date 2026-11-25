@@ -1,0 +1,288 @@
+{
+ "version": "tower-icons-v1",
+ "sizes": [
+  128,
+  256
+ ],
+ "states": [
+  "normal",
+  "cantafford",
+  "locked"
+ ],
+ "styles": {
+  "ring": "round build-ring button: rust rim, warm mid-tan disc, weapon with #2A1A10 outline and worn-cream backplate",
+  "glyph": "same weapon + cream backplate with no disc, for the tray tower buttons"
+ },
+ "icons": {
+  "sentry-ring-normal": {
+   "kind": "sentry",
+   "style": "ring",
+   "state": "normal",
+   "files": {
+    "256": "256/sentry-ring-normal.png",
+    "128": "128/sentry-ring-normal.png"
+   },
+   "opaqueBBox256": [
+    3,
+    3,
+    252,
+    252
+   ]
+  },
+  "sentry-ring-cantafford": {
+   "kind": "sentry",
+   "style": "ring",
+   "state": "cantafford",
+   "files": {
+    "256": "256/sentry-ring-cantafford.png",
+    "128": "128/sentry-ring-cantafford.png"
+   },
+   "opaqueBBox256": [
+    3,
+    3,
+    252,
+    252
+   ]
+  },
+  "sentry-ring-locked": {
+   "kind": "sentry",
+   "style": "ring",
+   "state": "locked",
+   "files": {
+    "256": "256/sentry-ring-locked.png",
+    "128": "128/sentry-ring-locked.png"
+   },
+   "opaqueBBox256": [
+    3,
+    3,
+    252,
+    252
+   ]
+  },
+  "sentry-glyph-normal": {
+   "kind": "sentry",
+   "style": "glyph",
+   "state": "normal",
+   "files": {
+    "256": "256/sentry-glyph-normal.png",
+    "128": "128/sentry-glyph-normal.png"
+   },
+   "opaqueBBox256": [
+    39,
+    17,
+    216,
+    238
+   ]
+  },
+  "sentry-glyph-cantafford": {
+   "kind": "sentry",
+   "style": "glyph",
+   "state": "cantafford",
+   "files": {
+    "256": "256/sentry-glyph-cantafford.png",
+    "128": "128/sentry-glyph-cantafford.png"
+   },
+   "opaqueBBox256": [
+    39,
+    17,
+    230,
+    238
+   ]
+  },
+  "sentry-glyph-locked": {
+   "kind": "sentry",
+   "style": "glyph",
+   "state": "locked",
+   "files": {
+    "256": "256/sentry-glyph-locked.png",
+    "128": "128/sentry-glyph-locked.png"
+   },
+   "opaqueBBox256": [
+    39,
+    17,
+    217,
+    238
+   ]
+  },
+  "mortar-ring-normal": {
+   "kind": "mortar",
+   "style": "ring",
+   "state": "normal",
+   "files": {
+    "256": "256/mortar-ring-normal.png",
+    "128": "128/mortar-ring-normal.png"
+   },
+   "opaqueBBox256": [
+    3,
+    3,
+    252,
+    252
+   ]
+  },
+  "mortar-ring-cantafford": {
+   "kind": "mortar",
+   "style": "ring",
+   "state": "cantafford",
+   "files": {
+    "256": "256/mortar-ring-cantafford.png",
+    "128": "128/mortar-ring-cantafford.png"
+   },
+   "opaqueBBox256": [
+    3,
+    3,
+    252,
+    252
+   ]
+  },
+  "mortar-ring-locked": {
+   "kind": "mortar",
+   "style": "ring",
+   "state": "locked",
+   "files": {
+    "256": "256/mortar-ring-locked.png",
+    "128": "128/mortar-ring-locked.png"
+   },
+   "opaqueBBox256": [
+    3,
+    3,
+    252,
+    252
+   ]
+  },
+  "mortar-glyph-normal": {
+   "kind": "mortar",
+   "style": "glyph",
+   "state": "normal",
+   "files": {
+    "256": "256/mortar-glyph-normal.png",
+    "128": "128/mortar-glyph-normal.png"
+   },
+   "opaqueBBox256": [
+    37,
+    18,
+    217,
+    237
+   ]
+  },
+  "mortar-glyph-cantafford": {
+   "kind": "mortar",
+   "style": "glyph",
+   "state": "cantafford",
+   "files": {
+    "256": "256/mortar-glyph-cantafford.png",
+    "128": "128/mortar-glyph-cantafford.png"
+   },
+   "opaqueBBox256": [
+    37,
+    18,
+    230,
+    237
+   ]
+  },
+  "mortar-glyph-locked": {
+   "kind": "mortar",
+   "style": "glyph",
+   "state": "locked",
+   "files": {
+    "256": "256/mortar-glyph-locked.png",
+    "128": "128/mortar-glyph-locked.png"
+   },
+   "opaqueBBox256": [
+    37,
+    18,
+    217,
+    237
+   ]
+  },
+  "barricade-ring-normal": {
+   "kind": "barricade",
+   "style": "ring",
+   "state": "normal",
+   "files": {
+    "256": "256/barricade-ring-normal.png",
+    "128": "128/barricade-ring-normal.png"
+   },
+   "opaqueBBox256": [
+    3,
+    3,
+    252,
+    252
+   ]
+  },
+  "barricade-ring-cantafford": {
+   "kind": "barricade",
+   "style": "ring",
+   "state": "cantafford",
+   "files": {
+    "256": "256/barricade-ring-cantafford.png",
+    "128": "128/barricade-ring-cantafford.png"
+   },
+   "opaqueBBox256": [
+    3,
+    3,
+    252,
+    252
+   ]
+  },
+  "barricade-ring-locked": {
+   "kind": "barricade",
+   "style": "ring",
+   "state": "locked",
+   "files": {
+    "256": "256/barricade-ring-locked.png",
+    "128": "128/barricade-ring-locked.png"
+   },
+   "opaqueBBox256": [
+    3,
+    3,
+    252,
+    252
+   ]
+  },
+  "barricade-glyph-normal": {
+   "kind": "barricade",
+   "style": "glyph",
+   "state": "normal",
+   "files": {
+    "256": "256/barricade-glyph-normal.png",
+    "128": "128/barricade-glyph-normal.png"
+   },
+   "opaqueBBox256": [
+    17,
+    37,
+    238,
+    218
+   ]
+  },
+  "barricade-glyph-cantafford": {
+   "kind": "barricade",
+   "style": "glyph",
+   "state": "cantafford",
+   "files": {
+    "256": "256/barricade-glyph-cantafford.png",
+    "128": "128/barricade-glyph-cantafford.png"
+   },
+   "opaqueBBox256": [
+    17,
+    37,
+    238,
+    227
+   ]
+  },
+  "barricade-glyph-locked": {
+   "kind": "barricade",
+   "style": "glyph",
+   "state": "locked",
+   "files": {
+    "256": "256/barricade-glyph-locked.png",
+    "128": "128/barricade-glyph-locked.png"
+   },
+   "opaqueBBox256": [
+    17,
+    37,
+    238,
+    218
+   ]
+  }
+ }
+}
