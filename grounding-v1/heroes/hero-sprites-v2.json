@@ -1,0 +1,497 @@
+{
+ "version": "grounding-v1 heroes (8-dir)",
+ "scale": "2x (1x/ = world px)",
+ "directions": [
+  "down",
+  "up",
+  "left",
+  "right",
+  "downleft",
+  "downright",
+  "upleft",
+  "upright"
+ ],
+ "directionNote": "rows 0-3 are identical in order to v2 (down, up, left, right); rows 4-7 are new: downleft, downright, upleft, upright. Right-facing rows are mirrors of the left ones. Cell and pivot are unchanged from v2.",
+ "heroes": {
+  "jess": {
+   "cell": [
+    200,
+    180
+   ],
+   "pivot": [
+    100,
+    170
+   ],
+   "anims": {
+    "idle": {
+     "file": "jess-idle@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 6,
+     "loop": true,
+     "shadow": {
+      "file": "shadows/jess-idle-shadow@2x.png",
+      "cell": [
+       268,
+       79
+      ],
+      "pivot": [
+       100,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    },
+    "walk": {
+     "file": "jess-walk@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 10,
+     "loop": true,
+     "shadow": {
+      "file": "shadows/jess-walk-shadow@2x.png",
+      "cell": [
+       268,
+       79
+      ],
+      "pivot": [
+       100,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    },
+    "attack": {
+     "file": "jess-attack@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 12,
+     "loop": false,
+     "shadow": {
+      "file": "shadows/jess-attack-shadow@2x.png",
+      "cell": [
+       268,
+       79
+      ],
+      "pivot": [
+       100,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    }
+   }
+  },
+  "kate": {
+   "cell": [
+    192,
+    180
+   ],
+   "pivot": [
+    96,
+    170
+   ],
+   "anims": {
+    "idle": {
+     "file": "kate-idle@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 6,
+     "loop": true,
+     "shadow": {
+      "file": "shadows/kate-idle-shadow@2x.png",
+      "cell": [
+       260,
+       79
+      ],
+      "pivot": [
+       96,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    },
+    "walk": {
+     "file": "kate-walk@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 10,
+     "loop": true,
+     "shadow": {
+      "file": "shadows/kate-walk-shadow@2x.png",
+      "cell": [
+       260,
+       79
+      ],
+      "pivot": [
+       96,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    },
+    "attack": {
+     "file": "kate-attack@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 12,
+     "loop": false,
+     "shadow": {
+      "file": "shadows/kate-attack-shadow@2x.png",
+      "cell": [
+       260,
+       79
+      ],
+      "pivot": [
+       96,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    }
+   }
+  },
+  "coupler": {
+   "cell": [
+    208,
+    208
+   ],
+   "pivot": [
+    104,
+    191
+   ],
+   "anims": {
+    "idle": {
+     "file": "coupler-idle@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 6,
+     "loop": true,
+     "shadow": {
+      "file": "shadows/coupler-idle-shadow@2x.png",
+      "cell": [
+       284,
+       83
+      ],
+      "pivot": [
+       104,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    },
+    "walk": {
+     "file": "coupler-walk@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 10,
+     "loop": true,
+     "shadow": {
+      "file": "shadows/coupler-walk-shadow@2x.png",
+      "cell": [
+       284,
+       83
+      ],
+      "pivot": [
+       104,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    },
+    "attack": {
+     "file": "coupler-attack@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 12,
+     "loop": false,
+     "shadow": {
+      "file": "shadows/coupler-attack-shadow@2x.png",
+      "cell": [
+       284,
+       83
+      ],
+      "pivot": [
+       104,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    }
+   }
+  },
+  "breaker": {
+   "cell": [
+    176,
+    196
+   ],
+   "pivot": [
+    88,
+    185
+   ],
+   "anims": {
+    "idle": {
+     "file": "breaker-idle@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 6,
+     "loop": true,
+     "shadow": {
+      "file": "shadows/breaker-idle-shadow@2x.png",
+      "cell": [
+       248,
+       81
+      ],
+      "pivot": [
+       88,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    },
+    "walk": {
+     "file": "breaker-walk@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 10,
+     "loop": true,
+     "shadow": {
+      "file": "shadows/breaker-walk-shadow@2x.png",
+      "cell": [
+       248,
+       81
+      ],
+      "pivot": [
+       88,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    },
+    "attack": {
+     "file": "breaker-attack@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 12,
+     "loop": false,
+     "shadow": {
+      "file": "shadows/breaker-attack-shadow@2x.png",
+      "cell": [
+       248,
+       81
+      ],
+      "pivot": [
+       88,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    }
+   }
+  },
+  "relay": {
+   "cell": [
+    168,
+    188
+   ],
+   "pivot": [
+    84,
+    178
+   ],
+   "anims": {
+    "idle": {
+     "file": "relay-idle@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 6,
+     "loop": true,
+     "shadow": {
+      "file": "shadows/relay-idle-shadow@2x.png",
+      "cell": [
+       238,
+       80
+      ],
+      "pivot": [
+       84,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    },
+    "walk": {
+     "file": "relay-walk@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 10,
+     "loop": true,
+     "shadow": {
+      "file": "shadows/relay-walk-shadow@2x.png",
+      "cell": [
+       238,
+       80
+      ],
+      "pivot": [
+       84,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    },
+    "attack": {
+     "file": "relay-attack@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "downleft",
+      "downright",
+      "upleft",
+      "upright"
+     ],
+     "fps": 12,
+     "loop": false,
+     "shadow": {
+      "file": "shadows/relay-attack-shadow@2x.png",
+      "cell": [
+       238,
+       80
+      ],
+      "pivot": [
+       84,
+       40
+      ],
+      "note": "path is relative to grounding-v1/. Same row/col layout as the sprite sheet; put its pivot on the same world point as the sprite pivot"
+     }
+    }
+   }
+  }
+ }
+}

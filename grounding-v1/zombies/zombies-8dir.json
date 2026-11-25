@@ -1,0 +1,1834 @@
+{
+ "version": "grounding-v1 zombies (8-dir walk)",
+ "scale": "same px scale as dg-art v7/4dir/cut (about 4.1 px per world px)",
+ "directions": [
+  "down",
+  "up",
+  "left",
+  "right",
+  "downleft",
+  "downright",
+  "upleft",
+  "upright"
+ ],
+ "frames": 4,
+ "anchor": "bottom-centre of each PNG = foot point (same as v7)",
+ "types": {
+  "drifter": {
+   "files": "zombies/drifter-<dir>-<frame>.png",
+   "shadows": "shadows/zombies/drifter-<dir>-<frame>-shadow.png (same top-left as the sprite)",
+   "frames": {
+    "down-0": {
+     "size": [
+      149,
+      275
+     ],
+     "foot": [
+      74.5,
+      266
+     ],
+     "shadowSize": [
+      251,
+      333
+     ]
+    },
+    "down-1": {
+     "size": [
+      148,
+      276
+     ],
+     "foot": [
+      74.0,
+      267
+     ],
+     "shadowSize": [
+      250,
+      334
+     ]
+    },
+    "down-2": {
+     "size": [
+      148,
+      277
+     ],
+     "foot": [
+      74.0,
+      268
+     ],
+     "shadowSize": [
+      251,
+      335
+     ]
+    },
+    "down-3": {
+     "size": [
+      147,
+      275
+     ],
+     "foot": [
+      73.5,
+      266
+     ],
+     "shadowSize": [
+      249,
+      333
+     ]
+    },
+    "up-0": {
+     "size": [
+      143,
+      278
+     ],
+     "foot": [
+      71.5,
+      269
+     ],
+     "shadowSize": [
+      246,
+      336
+     ]
+    },
+    "up-1": {
+     "size": [
+      142,
+      280
+     ],
+     "foot": [
+      71.0,
+      271
+     ],
+     "shadowSize": [
+      246,
+      339
+     ]
+    },
+    "up-2": {
+     "size": [
+      143,
+      281
+     ],
+     "foot": [
+      71.5,
+      272
+     ],
+     "shadowSize": [
+      247,
+      340
+     ]
+    },
+    "up-3": {
+     "size": [
+      141,
+      281
+     ],
+     "foot": [
+      70.5,
+      272
+     ],
+     "shadowSize": [
+      245,
+      340
+     ]
+    },
+    "right-0": {
+     "size": [
+      158,
+      269
+     ],
+     "foot": [
+      79.0,
+      260
+     ],
+     "shadowSize": [
+      258,
+      326
+     ]
+    },
+    "right-1": {
+     "size": [
+      153,
+      269
+     ],
+     "foot": [
+      76.5,
+      260
+     ],
+     "shadowSize": [
+      253,
+      326
+     ]
+    },
+    "right-2": {
+     "size": [
+      158,
+      269
+     ],
+     "foot": [
+      79.0,
+      260
+     ],
+     "shadowSize": [
+      258,
+      326
+     ]
+    },
+    "right-3": {
+     "size": [
+      154,
+      268
+     ],
+     "foot": [
+      77.0,
+      259
+     ],
+     "shadowSize": [
+      254,
+      325
+     ]
+    },
+    "downright-0": {
+     "size": [
+      176,
+      304
+     ],
+     "foot": [
+      88.0,
+      295
+     ],
+     "shadowSize": [
+      287,
+      366
+     ]
+    },
+    "downright-1": {
+     "size": [
+      177,
+      303
+     ],
+     "foot": [
+      88.5,
+      294
+     ],
+     "shadowSize": [
+      287,
+      365
+     ]
+    },
+    "downright-2": {
+     "size": [
+      176,
+      302
+     ],
+     "foot": [
+      88.0,
+      293
+     ],
+     "shadowSize": [
+      286,
+      364
+     ]
+    },
+    "downright-3": {
+     "size": [
+      172,
+      301
+     ],
+     "foot": [
+      86.0,
+      292
+     ],
+     "shadowSize": [
+      282,
+      363
+     ]
+    },
+    "upright-0": {
+     "size": [
+      146,
+      289
+     ],
+     "foot": [
+      73.0,
+      280
+     ],
+     "shadowSize": [
+      252,
+      349
+     ]
+    },
+    "upright-1": {
+     "size": [
+      167,
+      278
+     ],
+     "foot": [
+      83.5,
+      269
+     ],
+     "shadowSize": [
+      270,
+      336
+     ]
+    },
+    "upright-2": {
+     "size": [
+      148,
+      284
+     ],
+     "foot": [
+      74.0,
+      275
+     ],
+     "shadowSize": [
+      253,
+      343
+     ]
+    },
+    "upright-3": {
+     "size": [
+      143,
+      287
+     ],
+     "foot": [
+      71.5,
+      278
+     ],
+     "shadowSize": [
+      249,
+      347
+     ]
+    },
+    "left-0": {
+     "size": [
+      158,
+      269
+     ],
+     "foot": [
+      79.0,
+      260
+     ],
+     "shadowSize": [
+      258,
+      326
+     ]
+    },
+    "left-1": {
+     "size": [
+      153,
+      269
+     ],
+     "foot": [
+      76.5,
+      260
+     ],
+     "shadowSize": [
+      253,
+      326
+     ]
+    },
+    "left-2": {
+     "size": [
+      158,
+      269
+     ],
+     "foot": [
+      79.0,
+      260
+     ],
+     "shadowSize": [
+      258,
+      326
+     ]
+    },
+    "left-3": {
+     "size": [
+      154,
+      268
+     ],
+     "foot": [
+      77.0,
+      259
+     ],
+     "shadowSize": [
+      254,
+      325
+     ]
+    },
+    "downleft-0": {
+     "size": [
+      176,
+      304
+     ],
+     "foot": [
+      88.0,
+      295
+     ],
+     "shadowSize": [
+      287,
+      366
+     ]
+    },
+    "downleft-1": {
+     "size": [
+      177,
+      303
+     ],
+     "foot": [
+      88.5,
+      294
+     ],
+     "shadowSize": [
+      287,
+      365
+     ]
+    },
+    "downleft-2": {
+     "size": [
+      176,
+      302
+     ],
+     "foot": [
+      88.0,
+      293
+     ],
+     "shadowSize": [
+      286,
+      364
+     ]
+    },
+    "downleft-3": {
+     "size": [
+      172,
+      301
+     ],
+     "foot": [
+      86.0,
+      292
+     ],
+     "shadowSize": [
+      282,
+      363
+     ]
+    },
+    "upleft-0": {
+     "size": [
+      146,
+      289
+     ],
+     "foot": [
+      73.0,
+      280
+     ],
+     "shadowSize": [
+      252,
+      349
+     ]
+    },
+    "upleft-1": {
+     "size": [
+      167,
+      278
+     ],
+     "foot": [
+      83.5,
+      269
+     ],
+     "shadowSize": [
+      270,
+      336
+     ]
+    },
+    "upleft-2": {
+     "size": [
+      148,
+      284
+     ],
+     "foot": [
+      74.0,
+      275
+     ],
+     "shadowSize": [
+      253,
+      343
+     ]
+    },
+    "upleft-3": {
+     "size": [
+      143,
+      287
+     ],
+     "foot": [
+      71.5,
+      278
+     ],
+     "shadowSize": [
+      249,
+      347
+     ]
+    }
+   }
+  },
+  "sprinter": {
+   "files": "zombies/sprinter-<dir>-<frame>.png",
+   "shadows": "shadows/zombies/sprinter-<dir>-<frame>-shadow.png (same top-left as the sprite)",
+   "frames": {
+    "down-0": {
+     "size": [
+      149,
+      282
+     ],
+     "foot": [
+      74.5,
+      273
+     ],
+     "shadowSize": [
+      253,
+      341
+     ]
+    },
+    "down-1": {
+     "size": [
+      148,
+      283
+     ],
+     "foot": [
+      74.0,
+      274
+     ],
+     "shadowSize": [
+      252,
+      342
+     ]
+    },
+    "down-2": {
+     "size": [
+      146,
+      278
+     ],
+     "foot": [
+      73.0,
+      269
+     ],
+     "shadowSize": [
+      249,
+      336
+     ]
+    },
+    "down-3": {
+     "size": [
+      146,
+      279
+     ],
+     "foot": [
+      73.0,
+      270
+     ],
+     "shadowSize": [
+      249,
+      338
+     ]
+    },
+    "up-0": {
+     "size": [
+      145,
+      302
+     ],
+     "foot": [
+      72.5,
+      293
+     ],
+     "shadowSize": [
+      255,
+      364
+     ]
+    },
+    "up-1": {
+     "size": [
+      142,
+      302
+     ],
+     "foot": [
+      71.0,
+      293
+     ],
+     "shadowSize": [
+      252,
+      364
+     ]
+    },
+    "up-2": {
+     "size": [
+      144,
+      301
+     ],
+     "foot": [
+      72.0,
+      292
+     ],
+     "shadowSize": [
+      254,
+      363
+     ]
+    },
+    "up-3": {
+     "size": [
+      142,
+      300
+     ],
+     "foot": [
+      71.0,
+      291
+     ],
+     "shadowSize": [
+      252,
+      362
+     ]
+    },
+    "right-0": {
+     "size": [
+      194,
+      274
+     ],
+     "foot": [
+      97.0,
+      265
+     ],
+     "shadowSize": [
+      296,
+      332
+     ]
+    },
+    "right-1": {
+     "size": [
+      187,
+      276
+     ],
+     "foot": [
+      93.5,
+      267
+     ],
+     "shadowSize": [
+      289,
+      334
+     ]
+    },
+    "right-2": {
+     "size": [
+      191,
+      275
+     ],
+     "foot": [
+      95.5,
+      266
+     ],
+     "shadowSize": [
+      293,
+      333
+     ]
+    },
+    "right-3": {
+     "size": [
+      200,
+      273
+     ],
+     "foot": [
+      100.0,
+      264
+     ],
+     "shadowSize": [
+      301,
+      331
+     ]
+    },
+    "downright-0": {
+     "size": [
+      176,
+      290
+     ],
+     "foot": [
+      88.0,
+      281
+     ],
+     "shadowSize": [
+      283,
+      350
+     ]
+    },
+    "downright-1": {
+     "size": [
+      191,
+      290
+     ],
+     "foot": [
+      95.5,
+      281
+     ],
+     "shadowSize": [
+      298,
+      350
+     ]
+    },
+    "downright-2": {
+     "size": [
+      192,
+      289
+     ],
+     "foot": [
+      96.0,
+      280
+     ],
+     "shadowSize": [
+      298,
+      349
+     ]
+    },
+    "downright-3": {
+     "size": [
+      192,
+      288
+     ],
+     "foot": [
+      96.0,
+      279
+     ],
+     "shadowSize": [
+      298,
+      348
+     ]
+    },
+    "upright-0": {
+     "size": [
+      181,
+      308
+     ],
+     "foot": [
+      90.5,
+      299
+     ],
+     "shadowSize": [
+      293,
+      371
+     ]
+    },
+    "upright-1": {
+     "size": [
+      183,
+      311
+     ],
+     "foot": [
+      91.5,
+      302
+     ],
+     "shadowSize": [
+      296,
+      374
+     ]
+    },
+    "upright-2": {
+     "size": [
+      199,
+      295
+     ],
+     "foot": [
+      99.5,
+      286
+     ],
+     "shadowSize": [
+      307,
+      356
+     ]
+    },
+    "upright-3": {
+     "size": [
+      180,
+      307
+     ],
+     "foot": [
+      90.0,
+      298
+     ],
+     "shadowSize": [
+      292,
+      369
+     ]
+    },
+    "left-0": {
+     "size": [
+      194,
+      274
+     ],
+     "foot": [
+      97.0,
+      265
+     ],
+     "shadowSize": [
+      296,
+      332
+     ]
+    },
+    "left-1": {
+     "size": [
+      187,
+      276
+     ],
+     "foot": [
+      93.5,
+      267
+     ],
+     "shadowSize": [
+      289,
+      334
+     ]
+    },
+    "left-2": {
+     "size": [
+      191,
+      275
+     ],
+     "foot": [
+      95.5,
+      266
+     ],
+     "shadowSize": [
+      293,
+      333
+     ]
+    },
+    "left-3": {
+     "size": [
+      200,
+      273
+     ],
+     "foot": [
+      100.0,
+      264
+     ],
+     "shadowSize": [
+      301,
+      331
+     ]
+    },
+    "downleft-0": {
+     "size": [
+      176,
+      290
+     ],
+     "foot": [
+      88.0,
+      281
+     ],
+     "shadowSize": [
+      283,
+      350
+     ]
+    },
+    "downleft-1": {
+     "size": [
+      191,
+      290
+     ],
+     "foot": [
+      95.5,
+      281
+     ],
+     "shadowSize": [
+      298,
+      350
+     ]
+    },
+    "downleft-2": {
+     "size": [
+      192,
+      289
+     ],
+     "foot": [
+      96.0,
+      280
+     ],
+     "shadowSize": [
+      298,
+      349
+     ]
+    },
+    "downleft-3": {
+     "size": [
+      192,
+      288
+     ],
+     "foot": [
+      96.0,
+      279
+     ],
+     "shadowSize": [
+      298,
+      348
+     ]
+    },
+    "upleft-0": {
+     "size": [
+      181,
+      308
+     ],
+     "foot": [
+      90.5,
+      299
+     ],
+     "shadowSize": [
+      293,
+      371
+     ]
+    },
+    "upleft-1": {
+     "size": [
+      183,
+      311
+     ],
+     "foot": [
+      91.5,
+      302
+     ],
+     "shadowSize": [
+      296,
+      374
+     ]
+    },
+    "upleft-2": {
+     "size": [
+      199,
+      295
+     ],
+     "foot": [
+      99.5,
+      286
+     ],
+     "shadowSize": [
+      307,
+      356
+     ]
+    },
+    "upleft-3": {
+     "size": [
+      180,
+      307
+     ],
+     "foot": [
+      90.0,
+      298
+     ],
+     "shadowSize": [
+      292,
+      369
+     ]
+    }
+   }
+  },
+  "howler": {
+   "files": "zombies/howler-<dir>-<frame>.png",
+   "shadows": "shadows/zombies/howler-<dir>-<frame>-shadow.png (same top-left as the sprite)",
+   "frames": {
+    "down-0": {
+     "size": [
+      136,
+      279
+     ],
+     "foot": [
+      68.0,
+      270
+     ],
+     "shadowSize": [
+      239,
+      338
+     ]
+    },
+    "down-1": {
+     "size": [
+      131,
+      279
+     ],
+     "foot": [
+      65.5,
+      270
+     ],
+     "shadowSize": [
+      234,
+      338
+     ]
+    },
+    "down-2": {
+     "size": [
+      130,
+      277
+     ],
+     "foot": [
+      65.0,
+      268
+     ],
+     "shadowSize": [
+      233,
+      335
+     ]
+    },
+    "down-3": {
+     "size": [
+      133,
+      280
+     ],
+     "foot": [
+      66.5,
+      271
+     ],
+     "shadowSize": [
+      237,
+      339
+     ]
+    },
+    "up-0": {
+     "size": [
+      134,
+      285
+     ],
+     "foot": [
+      67.0,
+      276
+     ],
+     "shadowSize": [
+      239,
+      344
+     ]
+    },
+    "up-1": {
+     "size": [
+      131,
+      288
+     ],
+     "foot": [
+      65.5,
+      279
+     ],
+     "shadowSize": [
+      237,
+      348
+     ]
+    },
+    "up-2": {
+     "size": [
+      131,
+      289
+     ],
+     "foot": [
+      65.5,
+      280
+     ],
+     "shadowSize": [
+      237,
+      349
+     ]
+    },
+    "up-3": {
+     "size": [
+      130,
+      290
+     ],
+     "foot": [
+      65.0,
+      281
+     ],
+     "shadowSize": [
+      237,
+      350
+     ]
+    },
+    "right-0": {
+     "size": [
+      153,
+      276
+     ],
+     "foot": [
+      76.5,
+      267
+     ],
+     "shadowSize": [
+      255,
+      334
+     ]
+    },
+    "right-1": {
+     "size": [
+      152,
+      277
+     ],
+     "foot": [
+      76.0,
+      268
+     ],
+     "shadowSize": [
+      255,
+      335
+     ]
+    },
+    "right-2": {
+     "size": [
+      156,
+      276
+     ],
+     "foot": [
+      78.0,
+      267
+     ],
+     "shadowSize": [
+      258,
+      334
+     ]
+    },
+    "right-3": {
+     "size": [
+      164,
+      274
+     ],
+     "foot": [
+      82.0,
+      265
+     ],
+     "shadowSize": [
+      266,
+      332
+     ]
+    },
+    "downright-0": {
+     "size": [
+      170,
+      314
+     ],
+     "foot": [
+      85.0,
+      305
+     ],
+     "shadowSize": [
+      284,
+      377
+     ]
+    },
+    "downright-1": {
+     "size": [
+      170,
+      312
+     ],
+     "foot": [
+      85.0,
+      303
+     ],
+     "shadowSize": [
+      283,
+      375
+     ]
+    },
+    "downright-2": {
+     "size": [
+      171,
+      312
+     ],
+     "foot": [
+      85.5,
+      303
+     ],
+     "shadowSize": [
+      284,
+      375
+     ]
+    },
+    "downright-3": {
+     "size": [
+      165,
+      316
+     ],
+     "foot": [
+      82.5,
+      307
+     ],
+     "shadowSize": [
+      279,
+      380
+     ]
+    },
+    "upright-0": {
+     "size": [
+      137,
+      292
+     ],
+     "foot": [
+      68.5,
+      283
+     ],
+     "shadowSize": [
+      244,
+      352
+     ]
+    },
+    "upright-1": {
+     "size": [
+      149,
+      294
+     ],
+     "foot": [
+      74.5,
+      285
+     ],
+     "shadowSize": [
+      257,
+      355
+     ]
+    },
+    "upright-2": {
+     "size": [
+      148,
+      294
+     ],
+     "foot": [
+      74.0,
+      285
+     ],
+     "shadowSize": [
+      256,
+      355
+     ]
+    },
+    "upright-3": {
+     "size": [
+      146,
+      295
+     ],
+     "foot": [
+      73.0,
+      286
+     ],
+     "shadowSize": [
+      254,
+      356
+     ]
+    },
+    "left-0": {
+     "size": [
+      153,
+      276
+     ],
+     "foot": [
+      76.5,
+      267
+     ],
+     "shadowSize": [
+      255,
+      334
+     ]
+    },
+    "left-1": {
+     "size": [
+      152,
+      277
+     ],
+     "foot": [
+      76.0,
+      268
+     ],
+     "shadowSize": [
+      255,
+      335
+     ]
+    },
+    "left-2": {
+     "size": [
+      156,
+      276
+     ],
+     "foot": [
+      78.0,
+      267
+     ],
+     "shadowSize": [
+      258,
+      334
+     ]
+    },
+    "left-3": {
+     "size": [
+      164,
+      274
+     ],
+     "foot": [
+      82.0,
+      265
+     ],
+     "shadowSize": [
+      266,
+      332
+     ]
+    },
+    "downleft-0": {
+     "size": [
+      170,
+      314
+     ],
+     "foot": [
+      85.0,
+      305
+     ],
+     "shadowSize": [
+      284,
+      377
+     ]
+    },
+    "downleft-1": {
+     "size": [
+      170,
+      312
+     ],
+     "foot": [
+      85.0,
+      303
+     ],
+     "shadowSize": [
+      283,
+      375
+     ]
+    },
+    "downleft-2": {
+     "size": [
+      171,
+      312
+     ],
+     "foot": [
+      85.5,
+      303
+     ],
+     "shadowSize": [
+      284,
+      375
+     ]
+    },
+    "downleft-3": {
+     "size": [
+      165,
+      316
+     ],
+     "foot": [
+      82.5,
+      307
+     ],
+     "shadowSize": [
+      279,
+      380
+     ]
+    },
+    "upleft-0": {
+     "size": [
+      137,
+      292
+     ],
+     "foot": [
+      68.5,
+      283
+     ],
+     "shadowSize": [
+      244,
+      352
+     ]
+    },
+    "upleft-1": {
+     "size": [
+      149,
+      294
+     ],
+     "foot": [
+      74.5,
+      285
+     ],
+     "shadowSize": [
+      257,
+      355
+     ]
+    },
+    "upleft-2": {
+     "size": [
+      148,
+      294
+     ],
+     "foot": [
+      74.0,
+      285
+     ],
+     "shadowSize": [
+      256,
+      355
+     ]
+    },
+    "upleft-3": {
+     "size": [
+      146,
+      295
+     ],
+     "foot": [
+      73.0,
+      286
+     ],
+     "shadowSize": [
+      254,
+      356
+     ]
+    }
+   }
+  },
+  "bulwark": {
+   "files": "zombies/bulwark-<dir>-<frame>.png",
+   "shadows": "shadows/zombies/bulwark-<dir>-<frame>-shadow.png (same top-left as the sprite)",
+   "frames": {
+    "down-0": {
+     "size": [
+      187,
+      282
+     ],
+     "foot": [
+      93.5,
+      273
+     ],
+     "shadowSize": [
+      291,
+      341
+     ]
+    },
+    "down-1": {
+     "size": [
+      188,
+      285
+     ],
+     "foot": [
+      94.0,
+      276
+     ],
+     "shadowSize": [
+      293,
+      344
+     ]
+    },
+    "down-2": {
+     "size": [
+      186,
+      284
+     ],
+     "foot": [
+      93.0,
+      275
+     ],
+     "shadowSize": [
+      291,
+      343
+     ]
+    },
+    "down-3": {
+     "size": [
+      188,
+      280
+     ],
+     "foot": [
+      94.0,
+      271
+     ],
+     "shadowSize": [
+      292,
+      339
+     ]
+    },
+    "up-0": {
+     "size": [
+      172,
+      284
+     ],
+     "foot": [
+      86.0,
+      275
+     ],
+     "shadowSize": [
+      277,
+      343
+     ]
+    },
+    "up-1": {
+     "size": [
+      172,
+      285
+     ],
+     "foot": [
+      86.0,
+      276
+     ],
+     "shadowSize": [
+      277,
+      344
+     ]
+    },
+    "up-2": {
+     "size": [
+      172,
+      283
+     ],
+     "foot": [
+      86.0,
+      274
+     ],
+     "shadowSize": [
+      276,
+      342
+     ]
+    },
+    "up-3": {
+     "size": [
+      174,
+      285
+     ],
+     "foot": [
+      87.0,
+      276
+     ],
+     "shadowSize": [
+      279,
+      344
+     ]
+    },
+    "right-0": {
+     "size": [
+      173,
+      273
+     ],
+     "foot": [
+      86.5,
+      264
+     ],
+     "shadowSize": [
+      274,
+      331
+     ]
+    },
+    "right-1": {
+     "size": [
+      165,
+      275
+     ],
+     "foot": [
+      82.5,
+      266
+     ],
+     "shadowSize": [
+      267,
+      333
+     ]
+    },
+    "right-2": {
+     "size": [
+      163,
+      273
+     ],
+     "foot": [
+      81.5,
+      264
+     ],
+     "shadowSize": [
+      264,
+      331
+     ]
+    },
+    "right-3": {
+     "size": [
+      170,
+      273
+     ],
+     "foot": [
+      85.0,
+      264
+     ],
+     "shadowSize": [
+      271,
+      331
+     ]
+    },
+    "downright-0": {
+     "size": [
+      255,
+      332
+     ],
+     "foot": [
+      127.5,
+      323
+     ],
+     "shadowSize": [
+      374,
+      398
+     ]
+    },
+    "downright-1": {
+     "size": [
+      253,
+      362
+     ],
+     "foot": [
+      126.5,
+      353
+     ],
+     "shadowSize": [
+      381,
+      432
+     ]
+    },
+    "downright-2": {
+     "size": [
+      261,
+      336
+     ],
+     "foot": [
+      130.5,
+      327
+     ],
+     "shadowSize": [
+      381,
+      403
+     ]
+    },
+    "downright-3": {
+     "size": [
+      254,
+      335
+     ],
+     "foot": [
+      127.0,
+      326
+     ],
+     "shadowSize": [
+      374,
+      401
+     ]
+    },
+    "upright-0": {
+     "size": [
+      180,
+      290
+     ],
+     "foot": [
+      90.0,
+      281
+     ],
+     "shadowSize": [
+      287,
+      350
+     ]
+    },
+    "upright-1": {
+     "size": [
+      174,
+      291
+     ],
+     "foot": [
+      87.0,
+      282
+     ],
+     "shadowSize": [
+      281,
+      351
+     ]
+    },
+    "upright-2": {
+     "size": [
+      173,
+      289
+     ],
+     "foot": [
+      86.5,
+      280
+     ],
+     "shadowSize": [
+      279,
+      349
+     ]
+    },
+    "upright-3": {
+     "size": [
+      172,
+      290
+     ],
+     "foot": [
+      86.0,
+      281
+     ],
+     "shadowSize": [
+      279,
+      350
+     ]
+    },
+    "left-0": {
+     "size": [
+      173,
+      273
+     ],
+     "foot": [
+      86.5,
+      264
+     ],
+     "shadowSize": [
+      274,
+      331
+     ]
+    },
+    "left-1": {
+     "size": [
+      165,
+      275
+     ],
+     "foot": [
+      82.5,
+      266
+     ],
+     "shadowSize": [
+      267,
+      333
+     ]
+    },
+    "left-2": {
+     "size": [
+      163,
+      273
+     ],
+     "foot": [
+      81.5,
+      264
+     ],
+     "shadowSize": [
+      264,
+      331
+     ]
+    },
+    "left-3": {
+     "size": [
+      170,
+      273
+     ],
+     "foot": [
+      85.0,
+      264
+     ],
+     "shadowSize": [
+      271,
+      331
+     ]
+    },
+    "downleft-0": {
+     "size": [
+      255,
+      332
+     ],
+     "foot": [
+      127.5,
+      323
+     ],
+     "shadowSize": [
+      374,
+      398
+     ]
+    },
+    "downleft-1": {
+     "size": [
+      253,
+      362
+     ],
+     "foot": [
+      126.5,
+      353
+     ],
+     "shadowSize": [
+      381,
+      432
+     ]
+    },
+    "downleft-2": {
+     "size": [
+      261,
+      336
+     ],
+     "foot": [
+      130.5,
+      327
+     ],
+     "shadowSize": [
+      381,
+      403
+     ]
+    },
+    "downleft-3": {
+     "size": [
+      254,
+      335
+     ],
+     "foot": [
+      127.0,
+      326
+     ],
+     "shadowSize": [
+      374,
+      401
+     ]
+    },
+    "upleft-0": {
+     "size": [
+      180,
+      290
+     ],
+     "foot": [
+      90.0,
+      281
+     ],
+     "shadowSize": [
+      287,
+      350
+     ]
+    },
+    "upleft-1": {
+     "size": [
+      174,
+      291
+     ],
+     "foot": [
+      87.0,
+      282
+     ],
+     "shadowSize": [
+      281,
+      351
+     ]
+    },
+    "upleft-2": {
+     "size": [
+      173,
+      289
+     ],
+     "foot": [
+      86.5,
+      280
+     ],
+     "shadowSize": [
+      279,
+      349
+     ]
+    },
+    "upleft-3": {
+     "size": [
+      172,
+      290
+     ],
+     "foot": [
+      86.0,
+      281
+     ],
+     "shadowSize": [
+      279,
+      350
+     ]
+    }
+   }
+  }
+ }
+}

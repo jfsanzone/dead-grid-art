@@ -1,0 +1,114 @@
+{
+ "version": "grounding-v1 tower bases",
+ "layer": "ground-decal layer: after the map, before shadows and units; never Y-sorted",
+ "bases": {
+  "sentry-l1": {
+   "file": "tower-bases/sentry-l1-base@2x.png",
+   "size2x": [
+    139,
+    76
+   ],
+   "pivot2x": [
+    69.5,
+    56.2
+   ],
+   "note": "put pivot2x on the tower pivot (base centre); the decal centre sits a little behind the tower so its front lip shows"
+  },
+  "sentry-l2": {
+   "file": "tower-bases/sentry-l2-base@2x.png",
+   "size2x": [
+    151,
+    87
+   ],
+   "pivot2x": [
+    75.5,
+    64.4
+   ],
+   "note": "put pivot2x on the tower pivot (base centre); the decal centre sits a little behind the tower so its front lip shows"
+  },
+  "sentry-l3": {
+   "file": "tower-bases/sentry-l3-base@2x.png",
+   "size2x": [
+    162,
+    96
+   ],
+   "pivot2x": [
+    81.0,
+    71.0
+   ],
+   "note": "put pivot2x on the tower pivot (base centre); the decal centre sits a little behind the tower so its front lip shows"
+  },
+  "mortar-l1": {
+   "file": "tower-bases/mortar-l1-base@2x.png",
+   "size2x": [
+    139,
+    83
+   ],
+   "pivot2x": [
+    69.5,
+    61.4
+   ],
+   "note": "put pivot2x on the tower pivot (base centre); the decal centre sits a little behind the tower so its front lip shows"
+  },
+  "mortar-l2": {
+   "file": "tower-bases/mortar-l2-base@2x.png",
+   "size2x": [
+    151,
+    88
+   ],
+   "pivot2x": [
+    75.5,
+    65.1
+   ],
+   "note": "put pivot2x on the tower pivot (base centre); the decal centre sits a little behind the tower so its front lip shows"
+  },
+  "mortar-l3": {
+   "file": "tower-bases/mortar-l3-base@2x.png",
+   "size2x": [
+    162,
+    95
+   ],
+   "pivot2x": [
+    81.0,
+    70.3
+   ],
+   "note": "put pivot2x on the tower pivot (base centre); the decal centre sits a little behind the tower so its front lip shows"
+  },
+  "barricade-l1": {
+   "file": "tower-bases/barricade-l1-base@2x.png",
+   "size2x": [
+    185,
+    110
+   ],
+   "pivot2x": [
+    92.5,
+    81.4
+   ],
+   "note": "put pivot2x on the tower pivot (base centre); the decal centre sits a little behind the tower so its front lip shows"
+  },
+  "barricade-l2": {
+   "file": "tower-bases/barricade-l2-base@2x.png",
+   "size2x": [
+    190,
+    114
+   ],
+   "pivot2x": [
+    95.0,
+    84.4
+   ],
+   "note": "put pivot2x on the tower pivot (base centre); the decal centre sits a little behind the tower so its front lip shows"
+  },
+  "barricade-l3": {
+   "file": "tower-bases/barricade-l3-base@2x.png",
+   "size2x": [
+    195,
+    113
+   ],
+   "pivot2x": [
+    97.5,
+    83.6
+   ],
+   "note": "put pivot2x on the tower pivot (base centre); the decal centre sits a little behind the tower so its front lip shows"
+  }
+ }
+}
