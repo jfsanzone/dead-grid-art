@@ -1,0 +1,441 @@
+{
+ "map": "farm-map-v12",
+ "base": {
+  "1x": "farm-map-v12-base.jpg",
+  "2x": "farm-map-v12-base@2x.jpg",
+  "size": [
+   1280,
+   720
+  ]
+ },
+ "coords": "1x map pixels (2x = multiply by 2). x,y = top-left of the sprite; sortY = foot/base line in map y.",
+ "drawOrder": [
+  "base map",
+  "ground layer (decals, path FX)",
+  "shadows",
+  "units + props sorted by sortY (lower sortY first; unit sortY = foot y)",
+  "FX"
+ ],
+ "props": [
+  {
+   "name": "tree-pond",
+   "kind": "tree",
+   "x": 760,
+   "y": 49,
+   "w": 76,
+   "h": 71,
+   "sortY": 114,
+   "anchor": {
+    "x": 38.0,
+    "y": 65
+   },
+   "file": "props/1x/tree-pond.png",
+   "file2x": "props/tree-pond@2x.png"
+  },
+  {
+   "name": "tree-tr",
+   "kind": "tree",
+   "x": 1174,
+   "y": 0,
+   "w": 106,
+   "h": 122,
+   "sortY": 116,
+   "anchor": {
+    "x": 53.0,
+    "y": 116
+   },
+   "file": "props/1x/tree-tr.png",
+   "file2x": "props/tree-tr@2x.png"
+  },
+  {
+   "name": "tree-tl",
+   "kind": "tree",
+   "x": 0,
+   "y": 0,
+   "w": 102,
+   "h": 142,
+   "sortY": 136,
+   "anchor": {
+    "x": 51.0,
+    "y": 136
+   },
+   "file": "props/1x/tree-tl.png",
+   "file2x": "props/tree-tl@2x.png"
+  },
+  {
+   "name": "crossing-signal",
+   "kind": "signal",
+   "x": 1019,
+   "y": 59,
+   "w": 43,
+   "h": 83,
+   "sortY": 140,
+   "anchor": {
+    "x": 21.5,
+    "y": 81
+   },
+   "file": "props/1x/crossing-signal.png",
+   "file2x": "props/crossing-signal@2x.png"
+  },
+  {
+   "name": "haybale-1",
+   "kind": "hay",
+   "x": 77,
+   "y": 95,
+   "w": 60,
+   "h": 58,
+   "sortY": 150,
+   "anchor": {
+    "x": 30.0,
+    "y": 55
+   },
+   "file": "props/1x/haybale-1.png",
+   "file2x": "props/haybale-1@2x.png"
+  },
+  {
+   "name": "fence-farmhouse",
+   "kind": "fence",
+   "x": 1058,
+   "y": 131,
+   "w": 36,
+   "h": 53,
+   "sortY": 178,
+   "anchor": {
+    "x": 18.0,
+    "y": 47
+   },
+   "file": "props/1x/fence-farmhouse.png",
+   "file2x": "props/fence-farmhouse@2x.png"
+  },
+  {
+   "name": "silo",
+   "kind": "building",
+   "x": 164,
+   "y": 57,
+   "w": 54,
+   "h": 123,
+   "sortY": 180,
+   "anchor": {
+    "x": 27.0,
+    "y": 123
+   },
+   "file": "props/1x/silo.png",
+   "file2x": "props/silo@2x.png"
+  },
+  {
+   "name": "bushes-left",
+   "kind": "bush",
+   "x": 0,
+   "y": 133,
+   "w": 78,
+   "h": 122,
+   "sortY": 250,
+   "anchor": {
+    "x": 39.0,
+    "y": 117
+   },
+   "file": "props/1x/bushes-left.png",
+   "file2x": "props/bushes-left@2x.png"
+  },
+  {
+   "name": "haybale-2",
+   "kind": "hay",
+   "x": 133,
+   "y": 218,
+   "w": 34,
+   "h": 32,
+   "sortY": 250,
+   "anchor": {
+    "x": 17.0,
+    "y": 32
+   },
+   "file": "props/1x/haybale-2.png",
+   "file2x": "props/haybale-2@2x.png"
+  },
+  {
+   "name": "farmhouse-crates",
+   "kind": "crate",
+   "x": 1034,
+   "y": 182,
+   "w": 49,
+   "h": 73,
+   "sortY": 252,
+   "anchor": {
+    "x": 24.5,
+    "y": 70
+   },
+   "file": "props/1x/farmhouse-crates.png",
+   "file2x": "props/farmhouse-crates@2x.png"
+  },
+  {
+   "name": "bushes-right",
+   "kind": "bush",
+   "x": 1220,
+   "y": 145,
+   "w": 60,
+   "h": 150,
+   "sortY": 290,
+   "anchor": {
+    "x": 30.0,
+    "y": 145
+   },
+   "file": "props/1x/bushes-right.png",
+   "file2x": "props/bushes-right@2x.png"
+  },
+  {
+   "name": "feed-barrel",
+   "kind": "barrel",
+   "x": 223,
+   "y": 228,
+   "w": 40,
+   "h": 66,
+   "sortY": 292,
+   "anchor": {
+    "x": 20.0,
+    "y": 64
+   },
+   "file": "props/1x/feed-barrel.png",
+   "file2x": "props/feed-barrel@2x.png"
+  },
+  {
+   "name": "fence-left-top",
+   "kind": "fence",
+   "x": 3,
+   "y": 267,
+   "w": 79,
+   "h": 39,
+   "sortY": 300,
+   "anchor": {
+    "x": 39.5,
+    "y": 33
+   },
+   "file": "props/1x/fence-left-top.png",
+   "file2x": "props/fence-left-top@2x.png"
+  },
+  {
+   "name": "farmhouse",
+   "kind": "building",
+   "x": 1047,
+   "y": 109,
+   "w": 170,
+   "h": 199,
+   "sortY": 305,
+   "anchor": {
+    "x": 85.0,
+    "y": 196
+   },
+   "file": "props/1x/farmhouse.png",
+   "file2x": "props/farmhouse@2x.png"
+  },
+  {
+   "name": "truck",
+   "kind": "vehicle",
+   "x": 83,
+   "y": 268,
+   "w": 126,
+   "h": 81,
+   "sortY": 344,
+   "anchor": {
+    "x": 63.0,
+    "y": 76
+   },
+   "file": "props/1x/truck.png",
+   "file2x": "props/truck@2x.png"
+  },
+  {
+   "name": "wreck-cart",
+   "kind": "vehicle",
+   "x": 1093,
+   "y": 388,
+   "w": 76,
+   "h": 54,
+   "sortY": 444,
+   "anchor": {
+    "x": 38.0,
+    "y": 56
+   },
+   "file": "props/1x/wreck-cart.png",
+   "file2x": "props/wreck-cart@2x.png"
+  },
+  {
+   "name": "crate-3",
+   "kind": "crate",
+   "x": 1143,
+   "y": 451,
+   "w": 43,
+   "h": 46,
+   "sortY": 493,
+   "anchor": {
+    "x": 21.5,
+    "y": 42
+   },
+   "file": "props/1x/crate-3.png",
+   "file2x": "props/crate-3@2x.png"
+  },
+  {
+   "name": "crate-1",
+   "kind": "crate",
+   "x": 421,
+   "y": 511,
+   "w": 31,
+   "h": 25,
+   "sortY": 540,
+   "anchor": {
+    "x": 15.5,
+    "y": 29
+   },
+   "file": "props/1x/crate-1.png",
+   "file2x": "props/crate-1@2x.png"
+  },
+  {
+   "name": "barrel-right",
+   "kind": "barrel",
+   "x": 1038,
+   "y": 517,
+   "w": 38,
+   "h": 72,
+   "sortY": 578,
+   "anchor": {
+    "x": 19.0,
+    "y": 61
+   },
+   "file": "props/1x/barrel-right.png",
+   "file2x": "props/barrel-right@2x.png"
+  },
+  {
+   "name": "fence-right",
+   "kind": "fence",
+   "x": 1194,
+   "y": 373,
+   "w": 86,
+   "h": 219,
+   "sortY": 585,
+   "anchor": {
+    "x": 43.0,
+    "y": 212
+   },
+   "file": "props/1x/fence-right.png",
+   "file2x": "props/fence-right@2x.png"
+  },
+  {
+   "name": "crate-2",
+   "kind": "crate",
+   "x": 399,
+   "y": 544,
+   "w": 38,
+   "h": 37,
+   "sortY": 586,
+   "anchor": {
+    "x": 19.0,
+    "y": 42
+   },
+   "file": "props/1x/crate-2.png",
+   "file2x": "props/crate-2@2x.png"
+  },
+  {
+   "name": "tractor",
+   "kind": "vehicle",
+   "x": 57,
+   "y": 491,
+   "w": 125,
+   "h": 106,
+   "sortY": 592,
+   "anchor": {
+    "x": 62.5,
+    "y": 101
+   },
+   "file": "props/1x/tractor.png",
+   "file2x": "props/tractor@2x.png"
+  },
+  {
+   "name": "drum-left",
+   "kind": "barrel",
+   "x": 502,
+   "y": 550,
+   "w": 34,
+   "h": 39,
+   "sortY": 596,
+   "anchor": {
+    "x": 17.0,
+    "y": 46
+   },
+   "file": "props/1x/drum-left.png",
+   "file2x": "props/drum-left@2x.png"
+  },
+  {
+   "name": "fence-left",
+   "kind": "fence",
+   "x": 6,
+   "y": 451,
+   "w": 46,
+   "h": 157,
+   "sortY": 612,
+   "anchor": {
+    "x": 23.0,
+    "y": 161
+   },
+   "file": "props/1x/fence-left.png",
+   "file2x": "props/fence-left@2x.png"
+  },
+  {
+   "name": "fence-bottom-l",
+   "kind": "fence",
+   "x": 118,
+   "y": 666,
+   "w": 529,
+   "h": 40,
+   "sortY": 698,
+   "anchor": {
+    "x": 264.5,
+    "y": 32
+   },
+   "file": "props/1x/fence-bottom-l.png",
+   "file2x": "props/fence-bottom-l@2x.png"
+  },
+  {
+   "name": "fence-bottom-r",
+   "kind": "fence",
+   "x": 643,
+   "y": 666,
+   "w": 464,
+   "h": 42,
+   "sortY": 698,
+   "anchor": {
+    "x": 232.0,
+    "y": 32
+   },
+   "file": "props/1x/fence-bottom-r.png",
+   "file2x": "props/fence-bottom-r@2x.png"
+  },
+  {
+   "name": "tree-bl",
+   "kind": "tree",
+   "x": 0,
+   "y": 553,
+   "w": 117,
+   "h": 158,
+   "sortY": 705,
+   "anchor": {
+    "x": 58.5,
+    "y": 152
+   },
+   "file": "props/1x/tree-bl.png",
+   "file2x": "props/tree-bl@2x.png"
+  },
+  {
+   "name": "tree-br",
+   "kind": "tree",
+   "x": 1098,
+   "y": 518,
+   "w": 182,
+   "h": 193,
+   "sortY": 705,
+   "anchor": {
+    "x": 91.0,
+    "y": 187
+   },
+   "file": "props/1x/tree-br.png",
+   "file2x": "props/tree-br@2x.png"
+  }
+ ]
+}
