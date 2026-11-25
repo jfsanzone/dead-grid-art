@@ -1,0 +1,252 @@
+{
+ "version": "hero-sprites-v2",
+ "scale": "2x (draw at 0.5 for 1x world px)",
+ "directions": [
+  "down",
+  "up",
+  "left",
+  "right"
+ ],
+ "heroes": {
+  "jess": {
+   "cell": [
+    200,
+    180
+   ],
+   "pivot": [
+    100,
+    170
+   ],
+   "anims": {
+    "idle": {
+     "file": "jess-idle@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 6,
+     "loop": true
+    },
+    "walk": {
+     "file": "jess-walk@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 10,
+     "loop": true
+    },
+    "attack": {
+     "file": "jess-attack@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 12,
+     "loop": false
+    }
+   }
+  },
+  "kate": {
+   "cell": [
+    192,
+    180
+   ],
+   "pivot": [
+    96,
+    170
+   ],
+   "anims": {
+    "idle": {
+     "file": "kate-idle@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 6,
+     "loop": true
+    },
+    "walk": {
+     "file": "kate-walk@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 10,
+     "loop": true
+    },
+    "attack": {
+     "file": "kate-attack@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 12,
+     "loop": false
+    }
+   }
+  },
+  "coupler": {
+   "cell": [
+    208,
+    208
+   ],
+   "pivot": [
+    104,
+    191
+   ],
+   "anims": {
+    "idle": {
+     "file": "coupler-idle@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 6,
+     "loop": true
+    },
+    "walk": {
+     "file": "coupler-walk@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 10,
+     "loop": true
+    },
+    "attack": {
+     "file": "coupler-attack@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 12,
+     "loop": false
+    }
+   }
+  },
+  "breaker": {
+   "cell": [
+    176,
+    196
+   ],
+   "pivot": [
+    88,
+    185
+   ],
+   "anims": {
+    "idle": {
+     "file": "breaker-idle@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 6,
+     "loop": true
+    },
+    "walk": {
+     "file": "breaker-walk@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 10,
+     "loop": true
+    },
+    "attack": {
+     "file": "breaker-attack@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 12,
+     "loop": false
+    }
+   }
+  },
+  "relay": {
+   "cell": [
+    168,
+    188
+   ],
+   "pivot": [
+    84,
+    178
+   ],
+   "anims": {
+    "idle": {
+     "file": "relay-idle@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 6,
+     "loop": true
+    },
+    "walk": {
+     "file": "relay-walk@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 10,
+     "loop": true
+    },
+    "attack": {
+     "file": "relay-attack@2x.png",
+     "frames": 4,
+     "rows": [
+      "down",
+      "up",
+      "left",
+      "right"
+     ],
+     "fps": 12,
+     "loop": false
+    }
+   }
+  }
+ }
+}
