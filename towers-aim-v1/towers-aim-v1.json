@@ -1,0 +1,734 @@
+{
+ "version": "towers-aim-v1",
+ "directions": [
+  "N",
+  "NE",
+  "E",
+  "SE",
+  "S",
+  "SW",
+  "W",
+  "NW"
+ ],
+ "directionRule": "frame index = round(angleDeg/45) mod 8, angle measured clockwise from screen-up (N). E = screen right, S = screen down (toward camera). Angles use screen space (atan2(dx, -dy)).",
+ "drawOrder": "base, then head. Both use the same anchor (ground pivot) at the tower world position, so no per-direction offsets are needed.",
+ "coords": "all px; *2x values are for @2x files, *1x for 1x/. pivot = head rotation axis (turntable hub) inside the head cell. muzzle offsets are (dx,dy) from that pivot, screen y down; twin guns list two muzzles.",
+ "shadow": "keep the grounding-v1 tower shadow (shadows/towers/<kind>-l<t>-shadow@2x.png) under the base; same anchor.",
+ "towers": {
+  "sentry": {
+   "l1": {
+    "base": {
+     "file": "sentry-l1-base@2x.png",
+     "file1x": "1x/sentry-l1-base.png",
+     "cell2x": [
+      128,
+      208
+     ],
+     "anchor2x": [
+      64,
+      202
+     ],
+     "cell1x": [
+      64,
+      104
+     ],
+     "anchor1x": [
+      32.0,
+      101.0
+     ]
+    },
+    "head": {
+     "sheet": "sentry-l1-head@2x.png",
+     "sheet1x": "1x/sentry-l1-head.png",
+     "frames": 8,
+     "order": [
+      "N",
+      "NE",
+      "E",
+      "SE",
+      "S",
+      "SW",
+      "W",
+      "NW"
+     ],
+     "cell2x": [
+      192,
+      208
+     ],
+     "anchor2x": [
+      96,
+      202
+     ],
+     "cell1x": [
+      96,
+      104
+     ],
+     "anchor1x": [
+      48.0,
+      101.0
+     ],
+     "pivot2x": [
+      95.0,
+      130.9
+     ],
+     "pivot1x": [
+      47.5,
+      65.4
+     ],
+     "files": {
+      "N": "heads/sentry-l1-head-N@2x.png",
+      "NE": "heads/sentry-l1-head-NE@2x.png",
+      "E": "heads/sentry-l1-head-E@2x.png",
+      "SE": "heads/sentry-l1-head-SE@2x.png",
+      "S": "heads/sentry-l1-head-S@2x.png",
+      "SW": "heads/sentry-l1-head-SW@2x.png",
+      "W": "heads/sentry-l1-head-W@2x.png",
+      "NW": "heads/sentry-l1-head-NW@2x.png"
+     },
+     "files1x": {
+      "N": "heads/1x/sentry-l1-head-N.png",
+      "NE": "heads/1x/sentry-l1-head-NE.png",
+      "E": "heads/1x/sentry-l1-head-E.png",
+      "SE": "heads/1x/sentry-l1-head-SE.png",
+      "S": "heads/1x/sentry-l1-head-S.png",
+      "SW": "heads/1x/sentry-l1-head-SW.png",
+      "W": "heads/1x/sentry-l1-head-W.png",
+      "NW": "heads/1x/sentry-l1-head-NW.png"
+     },
+     "muzzle2x": {
+      "N": [
+       [
+        -10.0,
+        -80.2
+       ],
+       [
+        8.5,
+        -80.2
+       ]
+      ],
+      "NE": [
+       [
+        45.3,
+        -61.4
+       ],
+       [
+        53.7,
+        -52.4
+       ]
+      ],
+      "E": [
+       [
+        66.5,
+        -15.3
+       ],
+       [
+        66.3,
+        0.6
+       ]
+      ],
+      "SE": [
+       [
+        48.9,
+        31.2
+       ],
+       [
+        37.8,
+        42.2
+       ]
+      ],
+      "S": [
+       [
+        9.3,
+        56.6
+       ],
+       [
+        -10.0,
+        56.5
+       ]
+      ],
+      "SW": [
+       [
+        -37.9,
+        42.2
+       ],
+       [
+        -48.8,
+        31.3
+       ]
+      ],
+      "W": [
+       [
+        -67.4,
+        1.1
+       ],
+       [
+        -67.5,
+        -15.7
+       ]
+      ],
+      "NW": [
+       [
+        -55.3,
+        -53.1
+       ],
+       [
+        -47.6,
+        -60.8
+       ]
+      ]
+     },
+     "muzzle1x": {
+      "N": [
+       [
+        -5.0,
+        -40.1
+       ],
+       [
+        4.3,
+        -40.1
+       ]
+      ],
+      "NE": [
+       [
+        22.7,
+        -30.7
+       ],
+       [
+        26.8,
+        -26.2
+       ]
+      ],
+      "E": [
+       [
+        33.2,
+        -7.7
+       ],
+       [
+        33.1,
+        0.3
+       ]
+      ],
+      "SE": [
+       [
+        24.5,
+        15.6
+       ],
+       [
+        18.9,
+        21.1
+       ]
+      ],
+      "S": [
+       [
+        4.6,
+        28.3
+       ],
+       [
+        -5.0,
+        28.3
+       ]
+      ],
+      "SW": [
+       [
+        -18.9,
+        21.1
+       ],
+       [
+        -24.4,
+        15.6
+       ]
+      ],
+      "W": [
+       [
+        -33.7,
+        0.5
+       ],
+       [
+        -33.7,
+        -7.9
+       ]
+      ],
+      "NW": [
+       [
+        -27.6,
+        -26.6
+       ],
+       [
+        -23.8,
+        -30.4
+       ]
+      ]
+     }
+    },
+    "mountInBaseCell2x": [
+     63.0,
+     130.9
+    ],
+    "clipped": {
+     "N": false,
+     "NE": false,
+     "E": false,
+     "SE": false,
+     "S": false,
+     "SW": false,
+     "W": false,
+     "NW": false
+    }
+   },
+   "l2": {
+    "base": {
+     "file": "sentry-l2-base@2x.png",
+     "file1x": "1x/sentry-l2-base.png",
+     "cell2x": [
+      128,
+      208
+     ],
+     "anchor2x": [
+      64,
+      202
+     ],
+     "cell1x": [
+      64,
+      104
+     ],
+     "anchor1x": [
+      32.0,
+      101.0
+     ]
+    },
+    "head": {
+     "sheet": "sentry-l2-head@2x.png",
+     "sheet1x": "1x/sentry-l2-head.png",
+     "frames": 8,
+     "order": [
+      "N",
+      "NE",
+      "E",
+      "SE",
+      "S",
+      "SW",
+      "W",
+      "NW"
+     ],
+     "cell2x": [
+      192,
+      208
+     ],
+     "anchor2x": [
+      96,
+      202
+     ],
+     "cell1x": [
+      96,
+      104
+     ],
+     "anchor1x": [
+      48.0,
+      101.0
+     ],
+     "pivot2x": [
+      93.9,
+      135.0
+     ],
+     "pivot1x": [
+      47.0,
+      67.5
+     ],
+     "files": {
+      "N": "heads/sentry-l2-head-N@2x.png",
+      "NE": "heads/sentry-l2-head-NE@2x.png",
+      "E": "heads/sentry-l2-head-E@2x.png",
+      "SE": "heads/sentry-l2-head-SE@2x.png",
+      "S": "heads/sentry-l2-head-S@2x.png",
+      "SW": "heads/sentry-l2-head-SW@2x.png",
+      "W": "heads/sentry-l2-head-W@2x.png",
+      "NW": "heads/sentry-l2-head-NW@2x.png"
+     },
+     "files1x": {
+      "N": "heads/1x/sentry-l2-head-N.png",
+      "NE": "heads/1x/sentry-l2-head-NE.png",
+      "E": "heads/1x/sentry-l2-head-E.png",
+      "SE": "heads/1x/sentry-l2-head-SE.png",
+      "S": "heads/1x/sentry-l2-head-S.png",
+      "SW": "heads/1x/sentry-l2-head-SW.png",
+      "W": "heads/1x/sentry-l2-head-W.png",
+      "NW": "heads/1x/sentry-l2-head-NW.png"
+     },
+     "muzzle2x": {
+      "N": [
+       [
+        -12.7,
+        -84.4
+       ],
+       [
+        9.2,
+        -84.4
+       ]
+      ],
+      "NE": [
+       [
+        52.0,
+        -62.9
+       ],
+       [
+        57.1,
+        -56.5
+       ]
+      ],
+      "E": [
+       [
+        69.5,
+        -18.0
+       ],
+       [
+        69.5,
+        -18.0
+       ]
+      ],
+      "SE": [
+       [
+        50.3,
+        27.7
+       ],
+       [
+        37.6,
+        39.6
+       ]
+      ],
+      "S": [
+       [
+        12.2,
+        47.3
+       ],
+       [
+        -11.2,
+        47.4
+       ]
+      ],
+      "SW": [
+       [
+        -38.9,
+        39.0
+       ],
+       [
+        -52.2,
+        27.6
+       ]
+      ],
+      "W": [
+       [
+        -69.4,
+        -18.5
+       ],
+       [
+        -69.4,
+        -18.5
+       ]
+      ],
+      "NW": [
+       [
+        -59.4,
+        -57.0
+       ],
+       [
+        -53.8,
+        -62.9
+       ]
+      ]
+     },
+     "muzzle1x": {
+      "N": [
+       [
+        -6.3,
+        -42.2
+       ],
+       [
+        4.6,
+        -42.2
+       ]
+      ],
+      "NE": [
+       [
+        26.0,
+        -31.4
+       ],
+       [
+        28.5,
+        -28.3
+       ]
+      ],
+      "E": [
+       [
+        34.8,
+        -9.0
+       ],
+       [
+        34.8,
+        -9.0
+       ]
+      ],
+      "SE": [
+       [
+        25.2,
+        13.8
+       ],
+       [
+        18.8,
+        19.8
+       ]
+      ],
+      "S": [
+       [
+        6.1,
+        23.7
+       ],
+       [
+        -5.6,
+        23.7
+       ]
+      ],
+      "SW": [
+       [
+        -19.5,
+        19.5
+       ],
+       [
+        -26.1,
+        13.8
+       ]
+      ],
+      "W": [
+       [
+        -34.7,
+        -9.3
+       ],
+       [
+        -34.7,
+        -9.3
+       ]
+      ],
+      "NW": [
+       [
+        -29.7,
+        -28.5
+       ],
+       [
+        -26.9,
+        -31.5
+       ]
+      ]
+     }
+    },
+    "mountInBaseCell2x": [
+     61.9,
+     135.0
+    ],
+    "clipped": {
+     "N": false,
+     "NE": false,
+     "E": false,
+     "SE": false,
+     "S": false,
+     "SW": false,
+     "W": false,
+     "NW": false
+    }
+   },
+   "l3": {
+    "base": {
+     "file": "sentry-l3-base@2x.png",
+     "file1x": "1x/sentry-l3-base.png",
+     "cell2x": [
+      128,
+      208
+     ],
+     "anchor2x": [
+      64,
+      202
+     ],
+     "cell1x": [
+      64,
+      104
+     ],
+     "anchor1x": [
+      32.0,
+      101.0
+     ]
+    },
+    "head": {
+     "sheet": "sentry-l3-head@2x.png",
+     "sheet1x": "1x/sentry-l3-head.png",
+     "frames": 8,
+     "order": [
+      "N",
+      "NE",
+      "E",
+      "SE",
+      "S",
+      "SW",
+      "W",
+      "NW"
+     ],
+     "cell2x": [
+      192,
+      208
+     ],
+     "anchor2x": [
+      96,
+      202
+     ],
+     "cell1x": [
+      96,
+      104
+     ],
+     "anchor1x": [
+      48.0,
+      101.0
+     ],
+     "pivot2x": [
+      94.0,
+      104.6
+     ],
+     "pivot1x": [
+      47.0,
+      52.3
+     ],
+     "files": {
+      "N": "heads/sentry-l3-head-N@2x.png",
+      "NE": "heads/sentry-l3-head-NE@2x.png",
+      "E": "heads/sentry-l3-head-E@2x.png",
+      "SE": "heads/sentry-l3-head-SE@2x.png",
+      "S": "heads/sentry-l3-head-S@2x.png",
+      "SW": "heads/sentry-l3-head-SW@2x.png",
+      "W": "heads/sentry-l3-head-W@2x.png",
+      "NW": "heads/sentry-l3-head-NW@2x.png"
+     },
+     "files1x": {
+      "N": "heads/1x/sentry-l3-head-N.png",
+      "NE": "heads/1x/sentry-l3-head-NE.png",
+      "E": "heads/1x/sentry-l3-head-E.png",
+      "SE": "heads/1x/sentry-l3-head-SE.png",
+      "S": "heads/1x/sentry-l3-head-S.png",
+      "SW": "heads/1x/sentry-l3-head-SW.png",
+      "W": "heads/1x/sentry-l3-head-W.png",
+      "NW": "heads/1x/sentry-l3-head-NW.png"
+     },
+     "muzzle2x": {
+      "N": [
+       [
+        0.5,
+        -84.0
+       ]
+      ],
+      "NE": [
+       [
+        46.5,
+        -66.0
+       ]
+      ],
+      "E": [
+       [
+        65.4,
+        -16.6
+       ]
+      ],
+      "SE": [
+       [
+        40.1,
+        26.3
+       ]
+      ],
+      "S": [
+       [
+        -0.5,
+        45.9
+       ]
+      ],
+      "SW": [
+       [
+        -45.0,
+        28.5
+       ]
+      ],
+      "W": [
+       [
+        -60.5,
+        -16.6
+       ]
+      ],
+      "NW": [
+       [
+        -47.0,
+        -65.6
+       ]
+      ]
+     },
+     "muzzle1x": {
+      "N": [
+       [
+        0.2,
+        -42.0
+       ]
+      ],
+      "NE": [
+       [
+        23.2,
+        -33.0
+       ]
+      ],
+      "E": [
+       [
+        32.7,
+        -8.3
+       ]
+      ],
+      "SE": [
+       [
+        20.1,
+        13.1
+       ]
+      ],
+      "S": [
+       [
+        -0.3,
+        22.9
+       ]
+      ],
+      "SW": [
+       [
+        -22.5,
+        14.2
+       ]
+      ],
+      "W": [
+       [
+        -30.2,
+        -8.3
+       ]
+      ],
+      "NW": [
+       [
+        -23.5,
+        -32.8
+       ]
+      ]
+     }
+    },
+    "mountInBaseCell2x": [
+     62.0,
+     104.6
+    ],
+    "clipped": {
+     "N": false,
+     "NE": false,
+     "E": false,
+     "SE": false,
+     "S": false,
+     "SW": false,
+     "W": false,
+     "NW": false
+    }
+   }
+  }
+ }
+}
