@@ -1,0 +1,508 @@
+{
+ "version": "drone-strike-v2",
+ "scale": "Sheets are @2x. 1x/ holds the same files at world px. Coordinates are px from the cell top-left (anchors) or from the anchor (offsets), screen y down.",
+ "camera": "Same 3/4 map camera as towers-aim-v1 (35 deg elevation; ground circles squash to about 0.58 vertically). The drone was rendered in 3D at that camera, so every heading is a true view, not a rotated copy.",
+ "headings": {
+  "count": 16,
+  "stepDeg": 22.5,
+  "order": "index 0 = N (screen up), then clockwise: 1 = NNE, 4 = E (screen right), 8 = S (toward camera), 12 = W",
+  "pick": "i = round(atan2(dx, -dy) / 22.5deg) mod 16, where (dx, dy) is the drone's screen velocity (y down). Same rule as the towers, at 16 steps.",
+  "pickJs": "const i = ((Math.round(Math.atan2(dx, -dy) * 180 / Math.PI / 22.5) % 16) + 16) % 16;",
+  "bankNote": "Each heading has a baked forward tilt (nose down 9 deg). There is no baked bank: for turns, rotate the drone sprite about its anchor by up to +/-6 deg, leaning into the turn (the preview uses bank = clamp(-yawRateDegPerSec * 0.06, -6, 6), eased). Do not rotate the shadow."
+ },
+ "sprites": {
+  "drone": {
+   "file": "drone-16dir@2x.png",
+   "file1x": "1x/drone-16dir.png",
+   "layout": "rows = 16 headings (row i = heading i), columns = 3 rotor-blur frames",
+   "rows": 16,
+   "framesPerRow": 3,
+   "fps": 24,
+   "loop": true,
+   "cell2x": [
+    140,
+    100
+   ],
+   "anchor2x": [
+    70,
+    59
+   ],
+   "cell1x": [
+    70,
+    50
+   ],
+   "anchor1x": [
+    35.0,
+    29.5
+   ],
+   "frameRect2x": "x = frame * 140, y = heading * 100, w = 140, h = 100",
+   "anchorMeaning": "centre of the drone body. Draw it at (x, groundY - altitude). The anchor is the same point in every heading, so turning never makes it jump.",
+   "dropOffset2x": {
+    "0": [
+     0.0,
+     0.7
+    ],
+    "1": [
+     3.0,
+     0.9
+    ],
+    "2": [
+     6.4,
+     1.7
+    ],
+    "3": [
+     10.5,
+     3.8
+    ],
+    "4": [
+     12.9,
+     8.1
+    ],
+    "5": [
+     10.5,
+     12.5
+    ],
+    "6": [
+     6.4,
+     14.6
+    ],
+    "7": [
+     3.0,
+     15.3
+    ],
+    "8": [
+     0.0,
+     15.5
+    ],
+    "9": [
+     -3.0,
+     15.3
+    ],
+    "10": [
+     -6.4,
+     14.6
+    ],
+    "11": [
+     -10.5,
+     12.5
+    ],
+    "12": [
+     -12.9,
+     8.1
+    ],
+    "13": [
+     -10.5,
+     3.8
+    ],
+    "14": [
+     -6.4,
+     1.7
+    ],
+    "15": [
+     -3.0,
+     0.9
+    ]
+   },
+   "dropOffset1x": {
+    "0": [
+     0.0,
+     0.35
+    ],
+    "1": [
+     1.5,
+     0.45
+    ],
+    "2": [
+     3.2,
+     0.85
+    ],
+    "3": [
+     5.25,
+     1.9
+    ],
+    "4": [
+     6.45,
+     4.05
+    ],
+    "5": [
+     5.25,
+     6.25
+    ],
+    "6": [
+     3.2,
+     7.3
+    ],
+    "7": [
+     1.5,
+     7.65
+    ],
+    "8": [
+     0.0,
+     7.75
+    ],
+    "9": [
+     -1.5,
+     7.65
+    ],
+    "10": [
+     -3.2,
+     7.3
+    ],
+    "11": [
+     -5.25,
+     6.25
+    ],
+    "12": [
+     -6.45,
+     4.05
+    ],
+    "13": [
+     -5.25,
+     1.9
+    ],
+    "14": [
+     -3.2,
+     0.85
+    ],
+    "15": [
+     -1.5,
+     0.45
+    ]
+   },
+   "dropOffsetMeaning": "bomb release point (belly, under the camera pod) from the drone anchor, per heading. Spawn the bomb here.",
+   "dropGround2x": {
+    "0": [
+     0.0,
+     -7.4
+    ],
+    "1": [
+     3.0,
+     -7.2
+    ],
+    "2": [
+     6.4,
+     -6.4
+    ],
+    "3": [
+     10.5,
+     -4.3
+    ],
+    "4": [
+     12.9,
+     -0.0
+    ],
+    "5": [
+     10.5,
+     4.3
+    ],
+    "6": [
+     6.4,
+     6.4
+    ],
+    "7": [
+     3.0,
+     7.2
+    ],
+    "8": [
+     0.0,
+     7.4
+    ],
+    "9": [
+     -3.0,
+     7.2
+    ],
+    "10": [
+     -6.4,
+     6.4
+    ],
+    "11": [
+     -10.5,
+     4.3
+    ],
+    "12": [
+     -12.9,
+     0.0
+    ],
+    "13": [
+     -10.5,
+     -4.3
+    ],
+    "14": [
+     -6.4,
+     -6.4
+    ],
+    "15": [
+     -3.0,
+     -7.2
+    ]
+   },
+   "dropGround1x": {
+    "0": [
+     0.0,
+     -3.7
+    ],
+    "1": [
+     1.5,
+     -3.6
+    ],
+    "2": [
+     3.2,
+     -3.2
+    ],
+    "3": [
+     5.25,
+     -2.15
+    ],
+    "4": [
+     6.45,
+     -0.0
+    ],
+    "5": [
+     5.25,
+     2.15
+    ],
+    "6": [
+     3.2,
+     3.2
+    ],
+    "7": [
+     1.5,
+     3.6
+    ],
+    "8": [
+     0.0,
+     3.7
+    ],
+    "9": [
+     -1.5,
+     3.6
+    ],
+    "10": [
+     -3.2,
+     3.2
+    ],
+    "11": [
+     -5.25,
+     2.15
+    ],
+    "12": [
+     -6.45,
+     0.0
+    ],
+    "13": [
+     -5.25,
+     -2.15
+    ],
+    "14": [
+     -3.2,
+     -3.2
+    ],
+    "15": [
+     -1.5,
+     -3.6
+    ]
+   },
+   "dropGroundMeaning": "where a bomb released from that heading lands, from the drone's ground point (x, groundY). Same x as dropOffset; the bomb falls straight down on screen.",
+   "suggestedAltitudeWorld": 70
+  },
+  "droneShadow": {
+   "file": "drone-shadow-16dir@2x.png",
+   "file1x": "1x/drone-shadow-16dir.png",
+   "frames": 16,
+   "layout": "one frame per heading, left to right, same index as the drone rows",
+   "cell2x": [
+    144,
+    96
+   ],
+   "anchor2x": [
+    72,
+    48
+   ],
+   "cell1x": [
+    72,
+    48
+   ],
+   "anchor1x": [
+    36.0,
+    24.0
+   ],
+   "anchorMeaning": "ground point straight under the drone anchor: (x, groundY). Ground layer. Use the same heading index as the drone. Alpha is already about 40 percent at the centre; scale it if you want a lighter or darker shadow.",
+   "fallback": "one round shadow: draw frame 0 or a 60 x 24 (@2x) soft ellipse if you prefer not to swap shadows."
+  },
+  "bomb": {
+   "file": "bomb-fall@2x.png",
+   "file1x": "1x/bomb-fall.png",
+   "frames": 2,
+   "fps": 8,
+   "loop": true,
+   "cell2x": [
+    56,
+    80
+   ],
+   "anchor2x": [
+    28,
+    42
+   ],
+   "cell1x": [
+    28,
+    40
+   ],
+   "anchor1x": [
+    14.0,
+    21.0
+   ],
+   "anchorMeaning": "centre of the bomb. Spawn with anchor = drone anchor + dropOffset + spawnOffset (the bomb top then sits on the release point).",
+   "spawnOffset2x": [
+    0,
+    25
+   ],
+   "spawnOffset1x": [
+    0,
+    12.5
+   ],
+   "noseOffset2x": [
+    0,
+    18
+   ],
+   "noseOffset1x": [
+    0,
+    9.0
+   ],
+   "note": "Frame 1 has the cyan arming band lit, and the two frames rock +/-7 deg. The bomb is the same for every heading (it falls nose down). Explode when the nose (anchor + noseOffset) reaches the landing groundY."
+  },
+  "bombShadow": {
+   "file": "bomb-shadow@2x.png",
+   "file1x": "1x/bomb-shadow.png",
+   "frames": 1,
+   "cell2x": [
+    36,
+    18
+   ],
+   "anchor2x": [
+    18,
+    9
+   ],
+   "cell1x": [
+    18,
+    9
+   ],
+   "anchor1x": [
+    9,
+    4.5
+   ],
+   "optional": true,
+   "note": "At the landing point on the ground layer, scale from 0.4 to 1.0 and alpha from 0.45 to 1.0 over the fall."
+  },
+  "explosion": {
+   "file": "explosion@2x.png",
+   "file1x": "1x/explosion.png",
+   "frames": 8,
+   "fps": 16,
+   "loop": false,
+   "cell2x": [
+    528,
+    488
+   ],
+   "anchor2x": [
+    264,
+    326
+   ],
+   "cell1x": [
+    264,
+    244
+   ],
+   "anchor1x": [
+    132.0,
+    163.0
+   ],
+   "anchorMeaning": "ground point of impact",
+   "radius2x": 184,
+   "radius1x": 92,
+   "radiusWorldPx": 92,
+   "radiusTiles": 2,
+   "tileWorldPx": 46,
+   "groundSquash": 0.58,
+   "impactFrame": 1,
+   "shakeFrames": [
+    1,
+    2
+   ],
+   "note": "Frames: 0 flash, 1 fireball (apply damage or slow here; shake the camera), 2 fireball breaking into smoke with the dust ring starting, 3-4 dust ring reaches the full radius, 5-7 smoke column rises and fades, ring thins out. No gore. The cell is wider than v1 (528 x 488 vs 432 x 432) and the anchor moved to match; the radius is the same. To match another radius, scale by radiusWorld / 92 about the anchor."
+  },
+  "scorch": {
+   "file": "scorch@2x.png",
+   "file1x": "1x/scorch.png",
+   "frames": 2,
+   "loop": false,
+   "cell2x": [
+    294,
+    186
+   ],
+   "anchor2x": [
+    147,
+    93
+   ],
+   "cell1x": [
+    147,
+    93
+   ],
+   "anchor1x": [
+    73.5,
+    46.5
+   ],
+   "note": "Ground decal centred on the impact. Frame 0 has glowing embers (show it for about 1 s), frame 1 is plain. Fade with alpha (see the README timeline). Same cell and anchor as v1."
+  }
+ },
+ "timeline": {
+  "droneSpeedWorldPerSec": 250,
+  "altitudeWorld": 70,
+  "fallSeconds": 0.45,
+  "fallEase": "y = y0 + (y1 - y0) * t^2",
+  "events": [
+   [
+    "t=-1.9 s",
+    "drone enters on its path; pick the heading from velocity every frame"
+   ],
+   [
+    "t=0",
+    "the landing point (drone ground point + dropGround[heading]) is over the target: spawn the bomb at the drop point; the drone keeps flying and turning"
+   ],
+   [
+    "t=0.45",
+    "bomb nose reaches the ground: explosion frame 0, scorch (embers) on frame 1"
+   ],
+   [
+    "t=0.51",
+    "explosion frame 1: apply the Drone Strike effect, shake the camera for about 0.15 s"
+   ],
+   [
+    "t=0.95",
+    "explosion ends"
+   ],
+   [
+    "t=1.5",
+    "scorch switches to the plain frame"
+   ],
+   [
+    "zone end - 1.0 s",
+    "scorch fades to 0 over 1 s"
+   ]
+  ]
+ },
+ "drawLayers": [
+  "ground: scorch, droneShadow, bombShadow",
+  "units (y-sorted)",
+  "above units: bomb",
+  "fx: explosion",
+  "above fx: drone"
+ ],
+ "changesFromV1": [
+  "drone: 16 rendered headings x 3 rotor frames (v1 was one east-facing row)",
+  "droneShadow: one per heading (v1 had one)",
+  "drone cell 140 x 100 (v1 120 x 100), new anchor",
+  "dropOffset is per heading; dropGround is new",
+  "bomb cell 56 x 80 (v1 44 x 60), new anchor and offsets",
+  "explosion cell 528 x 488 (v1 432 x 432), new anchor, same radius",
+  "scorch: same cell and anchor"
+ ]
+}
