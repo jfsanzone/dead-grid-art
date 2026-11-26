@@ -1,0 +1,230 @@
+{
+ "version": "drone-strike-v1",
+ "scale": "Sheets are @2x with frames left to right. 1x/ holds the same files at world px. All coordinates are px from the cell top-left (anchors) or from the anchor (offsets), screen y down.",
+ "camera": "Same 3/4 map camera as towers-aim-v1 (ground circles squash to about 0.58 vertically).",
+ "sprites": {
+  "drone": {
+   "file": "drone-fly-east@2x.png",
+   "file1x": "1x/drone-fly-east.png",
+   "frames": 3,
+   "fps": 24,
+   "loop": true,
+   "cell2x": [
+    120,
+    100
+   ],
+   "anchor2x": [
+    58.2,
+    55.8
+   ],
+   "cell1x": [
+    60,
+    50
+   ],
+   "anchor1x": [
+    29.1,
+    27.9
+   ],
+   "facing": "east (screen right). Mirror horizontally for west. For other headings rotate about the anchor, or keep it unrotated and only mirror (see README).",
+   "anchorMeaning": "centre of the drone body. Draw it at (x, groundY - altitude).",
+   "dropOffset2x": [
+    -4.2,
+    25.7
+   ],
+   "dropOffset1x": [
+    -2.1,
+    12.85
+   ],
+   "dropOffsetMeaning": "bomb release point (belly, under the camera pod), measured from the drone anchor. Negate x if the drone is mirrored.",
+   "suggestedAltitudeWorld": 70
+  },
+  "droneShadow": {
+   "file": "drone-shadow@2x.png",
+   "file1x": "1x/drone-shadow.png",
+   "frames": 1,
+   "cell2x": [
+    96,
+    40
+   ],
+   "anchor2x": [
+    48.0,
+    20.0
+   ],
+   "cell1x": [
+    48,
+    20
+   ],
+   "anchor1x": [
+    24.0,
+    10.0
+   ],
+   "anchorMeaning": "ground point straight under the drone: (x + dropOffset.x, groundY). Ground layer."
+  },
+  "bomb": {
+   "file": "bomb-fall@2x.png",
+   "file1x": "1x/bomb-fall.png",
+   "frames": 2,
+   "fps": 8,
+   "loop": true,
+   "cell2x": [
+    44,
+    60
+   ],
+   "anchor2x": [
+    22,
+    31
+   ],
+   "cell1x": [
+    22,
+    30
+   ],
+   "anchor1x": [
+    11.0,
+    15.5
+   ],
+   "anchorMeaning": "centre of the bomb. Spawn with anchor = drone drop point + spawnOffset (the bomb top then sits on the release point).",
+   "spawnOffset2x": [
+    0,
+    21
+   ],
+   "spawnOffset1x": [
+    0,
+    10.5
+   ],
+   "noseOffset2x": [
+    0,
+    17
+   ],
+   "noseOffset1x": [
+    0,
+    8.5
+   ],
+   "note": "Frame 1 has the amber arming light on, and the two frames rock \u00b16\u00b0. Explode when the nose (anchor + noseOffset) reaches groundY."
+  },
+  "bombShadow": {
+   "file": "bomb-shadow@2x.png",
+   "file1x": "1x/bomb-shadow.png",
+   "frames": 1,
+   "cell2x": [
+    36,
+    18
+   ],
+   "anchor2x": [
+    18,
+    9
+   ],
+   "cell1x": [
+    18,
+    9
+   ],
+   "anchor1x": [
+    9,
+    4.5
+   ],
+   "optional": true,
+   "note": "At the impact point on the ground layer, scale from 0.4 to 1.0 and alpha from 0.45 to 1.0 over the fall."
+  },
+  "explosion": {
+   "file": "explosion@2x.png",
+   "file1x": "1x/explosion.png",
+   "frames": 8,
+   "fps": 16,
+   "loop": false,
+   "cell2x": [
+    432,
+    432
+   ],
+   "anchor2x": [
+    216,
+    300
+   ],
+   "cell1x": [
+    216,
+    216
+   ],
+   "anchor1x": [
+    108.0,
+    150.0
+   ],
+   "anchorMeaning": "ground point of impact",
+   "radius2x": 184,
+   "radius1x": 92,
+   "radiusWorldPx": 92,
+   "radiusTiles": 2,
+   "tileWorldPx": 46,
+   "groundSquash": 0.58,
+   "impactFrame": 1,
+   "shakeFrames": [
+    1,
+    2
+   ],
+   "note": "Frames: 0 flash, 1 fireball and shockwave (apply damage or slow here; shake the camera), 2 fireball in smoke, 3\u20134 the dust ring reaches the full radius, 5\u20137 smoke rises and fades. No gore. To match another radius, scale the sprite by radiusWorld / 92 about the anchor."
+  },
+  "scorch": {
+   "file": "scorch@2x.png",
+   "file1x": "1x/scorch.png",
+   "frames": 2,
+   "loop": false,
+   "cell2x": [
+    294,
+    186
+   ],
+   "anchor2x": [
+    147.0,
+    93.0
+   ],
+   "cell1x": [
+    147,
+    93
+   ],
+   "anchor1x": [
+    73.5,
+    46.5
+   ],
+   "note": "Ground decal centred on the impact. Frame 0 has glowing embers (show it for about 1 s), and frame 1 is plain. Fade with alpha (see the README timeline). Scale it with the explosion if the radius changes."
+  }
+ },
+ "timeline": {
+  "droneSpeedWorldPerSec": 300,
+  "altitudeWorld": 70,
+  "fallSeconds": 0.45,
+  "fallEase": "y = y0 + (y1 - y0) * t^2",
+  "events": [
+   [
+    "t=-1.1 s",
+    "drone enters, flying toward the target"
+   ],
+   [
+    "t=0",
+    "drone drop point is over the target: spawn the bomb; the drone keeps flying"
+   ],
+   [
+    "t=0.45",
+    "bomb nose reaches the ground: explosion frame 0, scorch(embers) on frame 1"
+   ],
+   [
+    "t=0.51",
+    "explosion frame 1: apply the Drone Strike effect, shake the camera for about 0.15 s"
+   ],
+   [
+    "t=0.95",
+    "explosion ends"
+   ],
+   [
+    "t=1.5",
+    "scorch switches to the plain frame"
+   ],
+   [
+    "zone end - 1.0 s",
+    "scorch fades to 0 over 1 s (5 s zone, 7.5 s with the long upgrade)"
+   ]
+  ]
+ },
+ "drawLayers": [
+  "ground: scorch, droneShadow, bombShadow",
+  "units (y-sorted)",
+  "above units: bomb",
+  "fx: explosion",
+  "above fx: drone"
+ ]
+}
